@@ -3,8 +3,9 @@ Plug 'nanotech/jellybeans.vim'
 " Language-specific plugins
 Plug 'fatih/vim-go'
 
-" Plumbing that makes everything nicer
-"
+" Plumbing to make everything nicer
+" ------------------------------------
+
 " :Ag is like :grep but with `ag`
 Plug 'rking/ag.vim'
 
