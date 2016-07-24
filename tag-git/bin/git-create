@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BRANCH=$1
+
+git push origin master:refs/heads/$BRANCH
+git fetch origin
+git branch --track $BRANCH origin/$BRANCH
+git checkout $BRANCH

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+BRANCH=$1
+
+git push origin :refs/heads/$BRANCH
+git branch -d $BRANCH
