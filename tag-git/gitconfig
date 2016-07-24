@@ -32,6 +32,9 @@
   d = diff
   l = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lo = log -1 --pretty='%C(red)%H%nAuthor: %C(green)%an%n%C(magenta)%s%n%b'
+  ls = branch -a
+  ma = checkout master
+  mine = !git branch -a | grep jro
   p = push
   pr = !hub pull-request
   s = status --short --branch
