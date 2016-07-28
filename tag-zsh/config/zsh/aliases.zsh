@@ -1,3 +1,5 @@
+alias ls='ls --color'
+
 alias g='git'
 
 alias glog='g l'

@@ -26,7 +26,7 @@
   # Turn on an experimental heuristic that should make the diff easier to read
   compactionHeuristic = true
 [alias]
-  a = add
+  a = add .
   ci = commit -av
   co = checkout
   d = diff
