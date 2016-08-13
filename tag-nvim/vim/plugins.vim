@@ -47,3 +47,6 @@ Plug 'tpope/vim-repeat'
 
 " Intelligently reopen files where you left off
 Plug 'dietsche/vim-lastplace'
+
+" Buffer management made easy(-ier)
+Plug 'troydm/easybuffer.vim'
