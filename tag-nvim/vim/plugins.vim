@@ -4,7 +4,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'fatih/vim-go'
 
 " Plumbing to make everything nicer
-" ------------------------------------
+" ---------------------------------
 
 " :Ag is like :grep but with `ag`
 Plug 'rking/ag.vim'
@@ -50,3 +50,8 @@ Plug 'dietsche/vim-lastplace'
 
 " Buffer management made easy(-ier)
 Plug 'troydm/easybuffer.vim'
+
+" Vim and Tmux sitting in a tree ...
+" ----------------------------------
+
+Plug 'christoomey/vim-tmux-navigator'
