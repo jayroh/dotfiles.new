@@ -18,12 +18,14 @@ function! s:LoadPlugins()
   call plug#end()
 endfunction
 
-
 " Leader is ','
 " <Leader> must be set before `s:SourceConfigFilesIn` below
 " because leader is used at the moment mappings are defined.
 " Changing mapleader after a mapping is defined has no effect on the mapping.
 let mapleader=","
+
+" toggle pasting with the F6 key
+set pastetoggle=<F6>
 
 call s:LoadPlugins()
 call s:SourceConfigFilesIn('')
