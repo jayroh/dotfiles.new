@@ -5,3 +5,16 @@ set cursorline                    " Highlight the current line
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
+
+let g:lightline = {
+      \ 'component_function': {
+      \   'filename': 'LightLineFilename'
+      \ },
+      \ 'colorscheme': 'jellybeans',
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
+
+function! LightLineFilename()
+  return expand('%')
+endfunction
