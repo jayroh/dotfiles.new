@@ -37,6 +37,7 @@
   mine = !git branch -a | grep jro
   p = push
   pr = !hub pull-request
+  rebase-origin = "!git checkout master && git pull origin master && git checkout - && git rebase master"
   s = status --short --branch
 
   # Typos
@@ -45,3 +46,5 @@
   pus = push
 [push]
   default = simple
+[diff]
+  compactionHeuristic = true
