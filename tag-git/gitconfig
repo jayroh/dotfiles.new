@@ -26,8 +26,8 @@
   # Turn on an experimental heuristic that should make the diff easier to read
   compactionHeuristic = true
 [alias]
-  a = add .
-  ci = commit -av
+  a = add
+  ci = commit -v
   co = checkout
   d = diff
   l = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
