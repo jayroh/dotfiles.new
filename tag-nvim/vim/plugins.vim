@@ -50,6 +50,10 @@ Plug 'dietsche/vim-lastplace'
 
 " Buffer management made easy(-ier)
 Plug 'troydm/easybuffer.vim'
+
+" Neomake fullfills the same job Syntastic had previously, except it's async
+Plug 'benekastah/neomake'
+
 " Ability to define and utilize snippets of text or code
 Plug 'SirVer/ultisnips'
 
