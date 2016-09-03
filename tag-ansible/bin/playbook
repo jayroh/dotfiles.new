@@ -2,10 +2,12 @@
 
 NEWPLAYBOOK=$1
 
-mkdir -p playbooks/roles/$NEWPLAYBOOK/tasks
-mkdir -p playbooks/roles/$NEWPLAYBOOK/vars
-mkdir -p playbooks/roles/$NEWPLAYBOOK/files
+mkdir -p "playbooks/roles/${NEWPLAYBOOK}/tasks"
+mkdir -p "playbooks/roles/${NEWPLAYBOOK}/vars"
+mkdir -p "playbooks/roles/${NEWPLAYBOOK}/files"
 
-touch playbooks/$NEWPLAYBOOK.yml
-touch playbooks/roles/$NEWPLAYBOOK/tasks/main.yml 
-touch playbooks/roles/$NEWPLAYBOOK/vars/main.yml
+touch "playbooks/${NEWPLAYBOOK}.yml"
+touch "playbooks/roles/${NEWPLAYBOOK}/tasks/main.yml"
+touch "playbooks/roles/${NEWPLAYBOOK}/vars/main.yml"
+
+echo "Playbook skeleton created for ${NEWPLAYBOOK}"
