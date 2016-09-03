@@ -50,6 +50,9 @@ Plug 'dietsche/vim-lastplace'
 
 " Buffer management made easy(-ier)
 Plug 'troydm/easybuffer.vim'
+" Ability to define and utilize snippets of text or code
+Plug 'SirVer/ultisnips'
+
 
 " Vim and Tmux sitting in a tree ...
 " ----------------------------------
