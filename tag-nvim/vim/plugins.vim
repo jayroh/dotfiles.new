@@ -12,9 +12,6 @@ Plug 'rking/ag.vim'
 " Easily comment/uncomment lines in many languages
 Plug 'tomtom/tcomment_vim'
 
-" <Tab> indents or triggers autocomplete, smartly
-Plug 'ervandew/supertab'
-
 " Git bindings
 Plug 'tpope/vim-fugitive'
 
@@ -57,6 +54,14 @@ Plug 'benekastah/neomake'
 " Ability to define and utilize snippets of text or code
 Plug 'SirVer/ultisnips'
 
+" <Tab> indents or triggers autocomplete, smartly
+Plug 'ervandew/supertab'
+
+" Deoplete is an on the fly auto complete for your local buffer
+Plug 'Shougo/deoplete.nvim'
+
+" Automatically match any brackets, parentheses or quotes when you’re typing
+Plug 'Raimondi/delimitMate'
 
 " Vim and Tmux sitting in a tree ...
 " ----------------------------------
