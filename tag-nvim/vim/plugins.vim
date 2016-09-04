@@ -1,7 +1,12 @@
 Plug 'nanotech/jellybeans.vim'
 
 " Language-specific plugins
+
+" Golang
 Plug 'fatih/vim-go'
+
+" Ansible
+Plug 'chase/vim-ansible-yaml'
 
 " Plumbing to make everything nicer
 " ---------------------------------
