@@ -1,3 +1,5 @@
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsSnippetsDir="~/.dotfiles/tag-nvim/config/nvim/UltiSnips"
+let g:UltiSnipsEnableSnipMate="1"
