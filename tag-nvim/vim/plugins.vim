@@ -63,7 +63,7 @@ Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 
 " Deoplete is an on the fly auto complete for your local buffer
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Automatically match any brackets, parentheses or quotes when you’re typing
 Plug 'Raimondi/delimitMate'
