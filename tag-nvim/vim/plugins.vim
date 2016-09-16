@@ -65,6 +65,9 @@ Plug 'ervandew/supertab'
 " Deoplete is an on the fly auto complete for your local buffer
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+" Deoplete sources for ruby. (provides the core Ruby methods)
+Plug 'fishbullet/deoplete-ruby'
+
 " Automatically match any brackets, parentheses or quotes when you’re typing
 Plug 'Raimondi/delimitMate'
 
