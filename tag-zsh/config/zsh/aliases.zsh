@@ -6,7 +6,9 @@ alias glog='g l'
 
 alias Grep='grep'
 
-alias reload!='source ~/.zshrc'
+alias reload_zsh='source ~/.zshrc'
+alias reload_rcup='ls ~/.dotfiles/ | cut -d- -f2 | xargs rcup -t'
+alias reload!='reload_zsh && reload_rcup'
 
 # Alias pbcopy and pbpaste to match the utilities in OSX. Lifted from -
 # https://superuser.com/questions/288320/whats-like-osxs-pbcopy-for-linux
