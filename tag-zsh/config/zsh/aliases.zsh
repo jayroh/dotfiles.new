@@ -1,6 +1,6 @@
 alias be='bundle exec'
 
-alias ls='ls --color'
+alias ls='ls -G'
 
 alias g='git'
 
