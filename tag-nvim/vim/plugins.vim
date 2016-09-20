@@ -71,7 +71,14 @@ Plug 'fishbullet/deoplete-ruby'
 " Automatically match any brackets, parentheses or quotes when you’re typing
 Plug 'Raimondi/delimitMate'
 
+" A Vim wrapper for running tests on different granularities.
+Plug 'janko-m/vim-test'
+
 " Vim and Tmux sitting in a tree ...
 " ----------------------------------
 
+" To navigate with ctrl+h/j/k/l across tmux and vim windows
 Plug 'christoomey/vim-tmux-navigator'
+
+" Make vim and tmux work together with some crazy voodoo sorcery
+Plug 'christoomey/vim-tmux-runner'
