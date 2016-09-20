@@ -6,7 +6,11 @@ alias g='git'
 
 alias glog='g l'
 
+alias gpom='g pull origin master'
+
 alias Grep='grep'
+
+alias hist='history'
 
 alias reload_zsh='source ~/.zshrc'
 alias reload_rcup='ls ~/.dotfiles/ | cut -d- -f2 | xargs rcup -t'
