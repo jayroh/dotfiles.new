@@ -10,8 +10,10 @@ python -c "import neovim" >& /dev/null
 
 # If not, install it
 if [ "${?}" == "1" ]; then
+  # If this doesn't work, see:
+  # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
   echo "Installing NeoVim pip module."
-  pip install neovim
+  pip3 install neovim
 fi
 
 # install plug vim plugin if it's not there already
