@@ -30,7 +30,6 @@ set pastetoggle=<F6>
 call s:LoadPlugins()
 call s:SourceConfigFilesIn('')
 call s:SourceConfigFilesIn('config')
-call s:SourceConfigFilesIn('config_plugins')
 call s:SourceConfigFilesIn('functions')
 
 " vim-plug loads all the filetype, syntax and colorscheme files, so turn them on
