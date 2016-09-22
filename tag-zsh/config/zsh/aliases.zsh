@@ -13,7 +13,7 @@ alias Grep='grep'
 alias hist='history'
 
 alias rcup='rcup -x setup'
-alias rcupall="rcup `ls ~/.dotfiles | grep tag | sed 's/^tag-/-t /' | tr "\n" ' '`"
+alias rcupall="rcup `ls ~/.dotfiles/tag-* | sed 's/^tag-/-t /' | tr "\n" ' '`"
 alias reload_zsh='source ~/.zshrc'
 alias reload!='reload_zsh && rcupall'
 
