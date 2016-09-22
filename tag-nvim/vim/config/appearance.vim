@@ -6,6 +6,10 @@ set cursorline                    " Highlight the current line
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
+" Configure netrw style
+let g:netrw_liststyle=3
+
+" Configure lightline
 let g:lightline = {
       \ 'component_function': {
       \   'filename': 'LightLineFilename'
