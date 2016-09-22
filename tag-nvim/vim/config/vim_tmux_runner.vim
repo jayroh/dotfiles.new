@@ -15,4 +15,7 @@ nmap <silent> <leader>q   :VtrSendCommandToRunner q<cr>:VtrKillRunner<cr>
 nmap <silent> <leader>ta  :VtrOpenRunner<cr>:VtrSendCommandToRunner be rake<cr>
 
 " repeat last command in the pane
-nmap <silent> <leader>ll :VtrSendCommandToRunner !!<cr>
+nmap <silent> <leader>ll  :VtrSendCommandToRunner !!<cr>
+
+" send `bundle` to pane
+nmap <silent> <leader>bun :VtrOpenRunner<cr>:VtrSendCommandToRunner bundle install<cr>
