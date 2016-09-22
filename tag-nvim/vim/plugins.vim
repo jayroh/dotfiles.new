@@ -8,6 +8,9 @@ Plug 'fatih/vim-go'
 " Ansible
 Plug 'chase/vim-ansible-yaml'
 
+" Ruby/Rails
+Plug 'tpope/vim-rails'
+
 " Plumbing to make everything nicer
 " ---------------------------------
 
