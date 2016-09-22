@@ -38,6 +38,7 @@
   pr = !hub pull-request
   rebase-origin = "!git checkout master && git pull origin master && git checkout - && git rebase master"
   s = status --short --branch
+  unstage = reset
 
   # Typos
   puhs = push
