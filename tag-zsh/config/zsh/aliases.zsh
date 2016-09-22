@@ -12,6 +12,8 @@ alias Grep='grep'
 
 alias hist='history'
 
+alias rcup='rcup -x setup -t tag-zsh -t tag-nvim'
+
 alias reload_zsh='source ~/.zshrc'
 alias reload_rcup='ls ~/.dotfiles/ | cut -d- -f2 | xargs rcup -t'
 alias reload!='reload_zsh && reload_rcup'
