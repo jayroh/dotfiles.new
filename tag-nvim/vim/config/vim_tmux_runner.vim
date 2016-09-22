@@ -13,3 +13,6 @@ nmap <silent> <leader>q   :VtrSendCommandToRunner q<cr>:VtrKillRunner<cr>
 
 " run test suite in the pane
 nmap <silent> <leader>ta  :VtrOpenRunner<cr>:VtrSendCommandToRunner be rake<cr>
+
+" repeat last command in the pane
+nmap <silent> <leader>ll :VtrSendCommandToRunner !!<cr>
