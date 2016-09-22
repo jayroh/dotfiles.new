@@ -1,5 +1,5 @@
-# Credit where credit is due: https://github.com/gabebw/dotfiles/blob/master/tag-git/gitconfig
-# Thanks @gabebw
+# Credit where credit is due - thank you @gabebw:
+# https://github.com/gabebw/dotfiles/blob/master/tag-git/gitconfig
 
 [user]
   email = joel.oliveira@gmail.com
@@ -12,16 +12,15 @@
   excludesfile = ~/.gitignore
   autocrlf = false
 [merge]
-  # Per @jferris: `ff = only` means Git will never implicitly do a merge commit, including while
-  # doing git pull. If I'm unexpectedly out of sync when I git pull, I get this
-  # message:
-  # fatal: Not possible to fast-forward, aborting.
-  # At that point, I know that I've forgotten to do something in my normal
-  # workflow, and I retrace my steps.
+  # Per @jferris: `ff = only` means Git will never implicitly do a merge
+  # commit, including while doing git pull. If I'm unexpectedly out of sync
+  # when I git pull, I get this message: fatal: Not possible to fast-forward,
+  # aborting.  At that point, I know that I've forgotten to do something in my
+  # normal workflow, and I retrace my steps.
   ff = only
 [diff]
-  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject
-  # instead of a/b/c/d as prefixes for patches
+  # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject instead of
+  # a/b/c/d as prefixes for patches
   mnemonicprefix = true
   # Turn on an experimental heuristic that should make the diff easier to read
   compactionHeuristic = true
