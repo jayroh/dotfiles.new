@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+[[ ! -e "${PWD}/.trello" ]] && exit
+
+BOARD_ID=`cat "${PWD}/.trello"`
+
+if [[ "${#}" -eq "0" ]];
+then
+  open "https://trello.com/b/$BOARD_ID"
+
+else
+  wrk lists in "$BOARD_ID" > /dev/null
+  wrk create card in wrk1 $@ > /dev/null
+  echo Card created - \"$1\"
+fi
