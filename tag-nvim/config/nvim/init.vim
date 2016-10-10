@@ -37,3 +37,6 @@ call s:SourceConfigFilesIn('functions')
 filetype plugin indent on
 syntax enable
 colorscheme jellybeans
+
+" vim-textobj-rubyblock requires that the matchit.vim plugin is enabled.
+runtime macros/matchit.vim

@@ -10,6 +10,8 @@ Plug 'chase/vim-ansible-yaml'
 
 " Ruby/Rails
 Plug 'tpope/vim-rails'
+Plug 'kana/vim-textobj-user'          " is a dependency of ...
+Plug 'nelstrom/vim-textobj-rubyblock' " ... this.
 
 " Plumbing to make everything nicer
 " ---------------------------------
