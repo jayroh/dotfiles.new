@@ -2,9 +2,10 @@ if has('autocmd')
   filetype indent plugin on
 
   augroup myfiletypes
-    au FileType html,ruby,eruby,yaml,rubymotion,vim,javascript
+    au FileType html,ruby,eruby,yaml,rubymotion,vim,javascript,scss
           \ setlocal autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
+    au BufRead,BufNewFile *.es6,*.js set ft=javascript
     au BufRead,BufNewFile *.md,*.markdown set ft=markdown
     au BufRead,BufNewFile *.sh set ft=sh
     au BufRead,BufNewFile *.html.erb set ft=html.eruby
