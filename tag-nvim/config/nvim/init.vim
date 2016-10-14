@@ -24,6 +24,17 @@ endfunction
 " Changing mapleader after a mapping is defined has no effect on the mapping.
 let mapleader=","
 
+" Add hyphen, `-`, to iskeyword (see `:help iskeyword` for more) so that the
+" hyphen is not used as a word separator. For example, by default if we had a
+" variable named `is-keyword` and the cursor was somewhere in "keyword",
+" running `diw` would only delete "keyword", and not "is-keyword". By updating
+" this setting all of "is-keyword" would be considered one word.
+"
+" This will help with autocomplete as well. Trying to auto complete "is" by
+" default would do nothing, but now it will try to autocomplete "is-keyword".
+" This is super helpful for when you are editing (S)CSS selectors.
+set iskeyword+=-
+
 " toggle pasting with the F6 key
 set pastetoggle=<F6>
 
