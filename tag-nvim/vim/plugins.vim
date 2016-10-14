@@ -13,6 +13,9 @@ Plug 'tpope/vim-rails'
 Plug 'kana/vim-textobj-user'          " is a dependency of ...
 Plug 'nelstrom/vim-textobj-rubyblock' " ... this.
 
+" ES6
+Plug 'isRuslan/vim-es6'
+
 " Plumbing to make everything nicer
 " ---------------------------------
 
