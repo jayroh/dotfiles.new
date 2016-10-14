@@ -39,11 +39,13 @@
   rebase-origin = "!git checkout master && git pull origin master && git checkout - && git rebase master"
   s = status --short --branch
   unstage = reset
+  open = !hub browse
 
   # Typos
   puhs = push
   pul = pull
   pus = push
+  brnach = branch
 [push]
   default = simple
 [diff]
