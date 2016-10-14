@@ -1,12 +1,13 @@
+let g:VtrDetachedName = "detached"
+let g:VtrPercentage = 33
+
 nmap <silent> <leader>rf  :VtrFocusRunner<cr>
 nmap <silent> <leader>ro  :VtrOpenRunner<cr>
 nmap <silent> <leader>rx  :VtrKillRunner<cr>
+nmap <silent> <leader>rc  :VtrKillRunner<cr>
 nmap <silent> <leader>rv  :VtrSendLinesToRunner<cr>
 nmap <silent> <leader>rd  :VtrSendCtrlD<cr>
 nmap <silent> <leader>rcl :VtrClearRunner<cr>
-
-" send `exit` to pane
-nmap <silent> <leader>ex  :VtrSendCommandToRunner exit<cr>:VtrKillRunner<cr>
 
 " send `q` to pane
 nmap <silent> <leader>q   :VtrSendCommandToRunner q<cr>:VtrKillRunner<cr>
@@ -15,7 +16,19 @@ nmap <silent> <leader>q   :VtrSendCommandToRunner q<cr>:VtrKillRunner<cr>
 nmap <silent> <leader>ta  :VtrOpenRunner<cr>:VtrSendCommandToRunner be rake<cr>
 
 " repeat last command in the pane
-nmap <silent> <leader>ll  :VtrSendCommandToRunner !!<cr>
+nmap <silent> <leader>ll  :VtrSendCommandToRunner !!<cr><cr>
 
 " send `bundle` to pane
 nmap <silent> <leader>bun :VtrOpenRunner<cr>:VtrSendCommandToRunner bundle install<cr>
+
+" display git status in pane
+nmap <silent> <leader>gs :VtrOpenRunner<cr>:VtrSendCommandToRunner g s<cr>:VtrFocusRunner<cr>
+
+" display git diff in pane
+nmap <silent> <leader>gd :VtrOpenRunner<cr>:VtrSendCommandToRunner g diff<cr>:VtrFocusRunner<cr>
+
+" run rubocop against this file
+nmap <silent> <leader>bo :VtrOpenRunner<cr>:VtrSendCommandToRunner be rubocop -D %<cr>
+
+" run rails server using local .port file
+nmap <silent> <leader>ser :VtrOpenRunner<cr>:VtrSendCommandToRunner be rails server puma -p `cat .port`<cr>
