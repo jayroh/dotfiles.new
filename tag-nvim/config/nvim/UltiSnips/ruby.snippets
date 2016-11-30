@@ -1,0 +1,38 @@
+snippet sidekiq "Sidekiq job"
+# frozen_string_literal: true
+class ${1}Job
+  include Sidekiq::Worker
+
+  sidekiq_options queue: :important
+
+  def perform(params)
+    @params = params
+  end
+end
+endsnippet
+
+snippet disablelength "Disable LineLength cop"
+# rubocop:disable Metrics/LineLength
+${0:${VISUAL:[...]}}
+# rubocop:enable Metrics/LineLength
+endsnippet
+
+snippet memo "with method definition"
+def ${1}
+  @_$1 ||= begin
+    ${0:# method contents}
+  end
+end
+endsnippet
+
+snippet memo "inside method"
+@_${1} ||= begin
+	${0:${VISUAL:# method contents}}
+end
+endsnippet
+
+snippet init
+def initialize(${1})
+	@$1 = $1
+end
+endsnippet
