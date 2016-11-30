@@ -33,7 +33,7 @@
   lo = log -1 --pretty='%C(red)%H%nAuthor: %C(green)%an%n%C(magenta)%s%n%b'
   ls = branch -a
   ma = checkout master
-  mine = !git branch -a | grep jro
+  mine = !git branch -a | grep jro | grep -v remotes
   p = push
   pr = !hub pull-request
   rebase-origin = "!git checkout master && git pull origin master && git checkout - && git rebase master"
