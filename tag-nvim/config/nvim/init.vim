@@ -24,6 +24,12 @@ endfunction
 " Changing mapleader after a mapping is defined has no effect on the mapping.
 let mapleader=","
 
+" Map 'ctrl-s' to save buffer
+" for normal mode ...
+map <C-S> :w<cr>
+" for insert mode ...
+imap <C-S> <Esc>:w<cr>i
+
 " Add hyphen, `-`, to iskeyword (see `:help iskeyword` for more) so that the
 " hyphen is not used as a word separator. For example, by default if we had a
 " variable named `is-keyword` and the cursor was somewhere in "keyword",
