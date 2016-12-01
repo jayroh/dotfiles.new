@@ -1,6 +1,11 @@
 if has('autocmd')
   filetype indent plugin on
 
+  augroup autoindent
+    au!
+    autocmd BufWritePre *.css,*.scss,*.sass :normal migg=G`i
+  augroup End
+
   augroup myfiletypes
     au FileType html,ruby,eruby,yaml,rubymotion,vim,javascript,scss
           \ setlocal autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
