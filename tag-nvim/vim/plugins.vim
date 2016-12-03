@@ -70,6 +70,9 @@ Plug 'SirVer/ultisnips'
 " <Tab> indents or triggers autocomplete, smartly
 Plug 'ervandew/supertab'
 
+" Line up text nicely (for projects that are used to the convention)
+Plug 'godlygeek/tabular'
+
 " Deoplete is an on the fly auto complete for your local buffer
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
