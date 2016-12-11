@@ -1,4 +1,2 @@
 # source the base zshrc configurations first
 for config_file (~/.config/zsh/*.zsh) source $config_file
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
