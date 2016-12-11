@@ -17,4 +17,3 @@ fi
 # Key bindings
 # ------------
 source "/home/joel/.fzf/shell/key-bindings.zsh"
-
