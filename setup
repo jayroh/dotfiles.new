@@ -25,4 +25,7 @@ fi
 
 rcup -x setup -t ansible -t git -t nvim -t rbenv -t rspec -t tmux -t zsh
 
+# install standard-format for js auto-formatting purposes
+npm install -g standard standard-format
+
 echo "Setup complete."
