@@ -1,2 +1,5 @@
+# source private zshrc file not kept in source control
+[[ -f ~/.zshrc_private ]] && source ~/.zshrc_private
+
 # source the base zshrc configurations first
 for config_file (~/.config/zsh/*.zsh) source $config_file
