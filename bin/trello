@@ -6,7 +6,15 @@ BOARD_ID=`cat "./.trello"`
 
 if [[ $# = 0 ]];
 then
-  open "https://trello.com/b/$BOARD_ID"
+  # use "xdg-open" if we're in linux, otherwise use "open"
+  if (( $+commands[xdg-open] )); then
+    OPEN_CMD='xdg-open'
+  else
+    OPEN_CMD='open'
+  fi
+
+  # open in a browser
+  $OPEN_CMD "https://trello.com/b/$BOARD_ID"
 
 else
   wrk lists in "$BOARD_ID" > /dev/null
