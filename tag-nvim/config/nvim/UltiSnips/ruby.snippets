@@ -11,6 +11,12 @@ class ${1}Job
 end
 endsnippet
 
+snippet disable "Disable cop"
+# rubocop:disable ${1}
+${0:${VISUAL:[...]}}
+# rubocop:enable $1
+endsnippet
+
 snippet disablelength "Disable LineLength cop"
 # rubocop:disable Metrics/LineLength
 ${0:${VISUAL:[...]}}
