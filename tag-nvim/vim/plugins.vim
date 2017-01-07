@@ -16,8 +16,15 @@ Plug 'nelstrom/vim-textobj-rubyblock' " ... this.
 " ES6
 Plug 'isRuslan/vim-es6'
 
+" HTML
+Plug 'mattn/emmet-vim'
+
 " Plumbing to make everything nicer
 " ---------------------------------
+
+" This plugin provides several pairs of bracket maps.
+" ... for my purposes this also provides a handy way to encode html entities
+Plug 'tpope/vim-unimpaired'
 
 " :Ag is like :grep but with `ag`
 Plug 'rking/ag.vim'
