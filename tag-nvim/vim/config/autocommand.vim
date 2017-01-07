@@ -7,13 +7,14 @@ if has('autocmd')
   augroup End
 
   augroup myfiletypes
-    au FileType html,ruby,eruby,yaml,rubymotion,vim,javascript,scss
+    au FileType html,ruby,eruby,yaml,rubymotion,vim,javascript,scss,liquid
           \ setlocal autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
     au BufRead,BufNewFile *.es6,*.js set ft=javascript
     au BufRead,BufNewFile *.md,*.markdown set ft=markdown
     au BufRead,BufNewFile *.sh set ft=sh
     au BufRead,BufNewFile *.html.erb set ft=html.eruby
+    au BufRead,BufNewFile *.liquid set ft=html.liquid
     au BufRead,BufNewFile *etc/nginx/* set ft=nginx
 
     au BufRead,BufNewFile *.json.jbuilder, set ft=ruby
