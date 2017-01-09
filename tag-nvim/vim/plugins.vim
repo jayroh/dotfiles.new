@@ -18,6 +18,7 @@ Plug 'isRuslan/vim-es6'
 
 " HTML
 Plug 'mattn/emmet-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Plumbing to make everything nicer
 " ---------------------------------
