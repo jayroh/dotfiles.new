@@ -73,8 +73,9 @@ Plug 'dietsche/vim-lastplace'
 " Buffer management made easy(-ier)
 Plug 'troydm/easybuffer.vim'
 
-" Neomake fullfills the same job Syntastic had previously, except it's async
-Plug 'benekastah/neomake'
+" Ale fullfills the same job Syntastic had previously, except it's async
+" Plug 'w0rp/ale'
+Plug 'derekprior/ale', { 'branch': 'dp-fix-rubocop' }
 
 " Ability to define and utilize snippets of text or code
 Plug 'SirVer/ultisnips'
