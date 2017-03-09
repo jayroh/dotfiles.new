@@ -12,6 +12,7 @@ Plug 'chase/vim-ansible-yaml'
 Plug 'tpope/vim-rails'
 Plug 'kana/vim-textobj-user'          " is a dependency of ...
 Plug 'nelstrom/vim-textobj-rubyblock' " ... this.
+Plug 'ecomba/vim-ruby-refactoring'    " some ruby refactoring goodness
 
 " ES6
 Plug 'isRuslan/vim-es6'
@@ -19,6 +20,9 @@ Plug 'isRuslan/vim-es6'
 " HTML
 Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim'
+
+" Crystal
+Plug 'rhysd/vim-crystal'
 
 " Plumbing to make everything nicer
 " ---------------------------------
