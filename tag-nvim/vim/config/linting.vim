@@ -9,9 +9,11 @@ autocmd InsertEnter * call ale#Lint()
 autocmd InsertLeave * call ale#Lint()
 
 let g:ale_lint_on_text_changed = 0
-"let g:ale_linters = {
-"  \   'javascript': ['eslint'],
-"  \   'scss': ['scss-lint'] }
+let g:ale_linters = {
+  \   'javascript': ['eslint'],
+  \   'scss': ['scss-lint'] ,
+  \   'html': []
+  \ }
 
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
