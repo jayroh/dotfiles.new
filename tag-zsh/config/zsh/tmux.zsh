@@ -2,7 +2,7 @@ export TERM=xterm-256color
 
 # start, or attach to, tmux session based on PWD basename
 t() {
-  PROJ_NAME=$(basename $PWD | sed 's/\.//')
+  PROJ_NAME=$(basename $PWD | sed 's/\.//g')
 
   tmux has-session -t safety2 2>/dev/null
 
