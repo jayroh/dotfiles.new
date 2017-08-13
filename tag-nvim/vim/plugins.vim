@@ -24,8 +24,15 @@ Plug 'editorconfig/editorconfig-vim'
 " Crystal
 Plug 'rhysd/vim-crystal'
 
+" Typescript
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mitermayer/vim-prettier', { 'do': 'yarn install', 'for': ['typescript'] }
+
 " Plumbing to make everything nicer
 " ---------------------------------
+
+" Sort using text objects and motions
+Plug 'christoomey/vim-sort-motion'
 
 " This plugin provides several pairs of bracket maps.
 " ... for my purposes this also provides a handy way to encode html entities
