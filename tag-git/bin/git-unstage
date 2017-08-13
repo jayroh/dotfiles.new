@@ -1,0 +1,16 @@
+#!/bin/bash
+# Remove files from staging area
+
+set -e
+
+if [[ $# == 0 ]]; then
+  staged_file=$(git status --porcelain | \
+       grep "M  " | \
+       cut -c 4-| \
+       fzf --reverse --ansi --tac | \
+       sed -E -e 's/^\*?[ \t]*//')
+else
+  staged_file="$1"
+fi
+
+git reset "$staged_file"

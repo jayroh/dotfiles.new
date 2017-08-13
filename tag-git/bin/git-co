@@ -1,5 +1,5 @@
 #!/bin/bash
-# Delete branch locally and remotely. Used by `git mm`
+# Checkout branch using fzf
 
 set -e
 
@@ -11,5 +11,4 @@ else
   branch="$1"
 fi
 
-git branch -D "$branch"
-git push origin :"$branch"
+git checkout "$branch"
