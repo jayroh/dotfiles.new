@@ -7,7 +7,7 @@ if has('autocmd')
   augroup End
 
   augroup myfiletypes
-    au FileType html,ruby,eruby,yaml,rubymotion,vim,javascript,scss,liquid
+    au FileType html,ruby,eruby,yaml,rubymotion,vim,javascript,json,scss,liquid,typescript
           \ setlocal autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
     au BufRead,BufNewFile *.es6,*.js set ft=javascript
