@@ -9,6 +9,7 @@ alias be='bundle exec'
 
 # git
 alias g='git'
+alias gut='git'
 alias glog='g l'
 alias gpom='g pull origin master'
 

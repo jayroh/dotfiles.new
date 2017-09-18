@@ -1,5 +1,6 @@
 # Key bindings
 # ------------
+
 if [[ $- == *i* ]]; then
 
 # CTRL-T - Paste the selected file path(s) into the command line
@@ -65,4 +66,3 @@ zle     -N   fzf-history-widget
 bindkey '^R' fzf-history-widget
 
 fi
-
