@@ -1,4 +1,4 @@
-export TERM=xterm-256color
+export TERM=screen-256color
 
 # start, or attach to, tmux session based on PWD basename
 t() {
