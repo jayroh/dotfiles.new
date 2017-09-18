@@ -3,3 +3,14 @@
 
 # source the base zshrc configurations first
 for config_file (~/.config/zsh/*.zsh) source $config_file
+
+# fuzzy find in history
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+# run this stuff every time I cd into directory
+
+function chpwd() {
+  [[ -f .heroku ]] && heroku accounts:set `cat .heroku`
+}
