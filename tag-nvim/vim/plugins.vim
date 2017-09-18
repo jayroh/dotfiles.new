@@ -34,6 +34,9 @@ Plug 'mitermayer/vim-prettier', { 'do': 'yarn install', 'for': ['typescript'] }
 " Sort using text objects and motions
 Plug 'christoomey/vim-sort-motion'
 
+" Copy to system clipboard using text objects and motions
+Plug 'christoomey/vim-system-copy'
+
 " This plugin provides several pairs of bracket maps.
 " ... for my purposes this also provides a handy way to encode html entities
 Plug 'tpope/vim-unimpaired'
