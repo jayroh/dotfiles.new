@@ -84,7 +84,7 @@ Plug 'dietsche/vim-lastplace'
 Plug 'troydm/easybuffer.vim'
 
 " Neomake fullfills the same job Syntastic had previously, except it's async
-Plug 'benekastah/neomake'
+Plug 'benekastah/neomake', { 'do': 'yarn install', 'for': ['standard'] }
 
 " Ability to define and utilize snippets of text or code
 Plug 'SirVer/ultisnips'
