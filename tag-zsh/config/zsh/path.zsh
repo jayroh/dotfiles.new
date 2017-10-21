@@ -4,5 +4,6 @@
 path=( "/usr/bin" "/bin" "/usr/sbin" "/sbin" )
 path=( "node_modules/.bin" "$HOME/.bin" "$HOME/.rbenv/bin" "/usr/local/bin" $path )
 path=( "$JAVA_HOME/jre/bin" $path )
+path=( "/usr/lib/go-1.8/bin" $path )
 
 [[ -d $HOME/Qt5.5.1/5.5/clang_64/bin ]] && path=( "$HOME/Qt5.5.1/5.5/clang_64/bin" $path )
