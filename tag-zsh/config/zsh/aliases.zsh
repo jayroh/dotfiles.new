@@ -7,6 +7,11 @@ alias his='history'
 # ruby
 alias be='bundle exec'
 
+# rails
+alias migrate='bundle exec rake db:migrate; bundle exec rake db:migrate RAILS_ENV=test'
+alias rollback='bundle exec rake db:rollback; bundle exec rake db:rollback RAILS_ENV=test'
+alias features='bundle exec rspec spec/features'
+
 # git
 alias g='git'
 alias gut='git'
