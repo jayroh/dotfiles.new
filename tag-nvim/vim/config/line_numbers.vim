@@ -1,4 +1,4 @@
-function Nums()
+function! Nums()
   set rnu!
   set nu!
 endfunction
