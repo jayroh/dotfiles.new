@@ -1,3 +1,4 @@
+brew "the_silver_searcher"
 brew "autojump"
 brew "fzf"
 brew "rbenv"

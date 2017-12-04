@@ -26,7 +26,7 @@ Plug 'rhysd/vim-crystal'
 
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mitermayer/vim-prettier', { 'do': 'yarn install', 'for': ['typescript'] }
+Plug 'mitermayer/vim-prettier'
 
 " Plumbing to make everything nicer
 " ---------------------------------
@@ -84,7 +84,7 @@ Plug 'dietsche/vim-lastplace'
 Plug 'troydm/easybuffer.vim'
 
 " Neomake fullfills the same job Syntastic had previously, except it's async
-Plug 'benekastah/neomake', { 'do': 'yarn install', 'for': ['standard'] }
+Plug 'benekastah/neomake'
 
 " Ability to define and utilize snippets of text or code
 Plug 'SirVer/ultisnips'
