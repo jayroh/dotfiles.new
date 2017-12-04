@@ -1,18 +1,37 @@
 #!/bin/sh
 
+brew bundle
+brew bundle --file=~/.Brewfile
+
+chsh -s /usr/local/bin/zsh
+
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 if [ ! -e ~/.bin/vim ]; then
   echo "Creating symlink from ~/.bin/vim to NeoVim bin."
   ln -s `which nvim` ~/.bin/vim
 fi
 
-# Test if the neovim pip module is installed
-python -c "import neovim" >& /dev/null
+# Test if the neovim pip2 module is installed
+python2 -c "import neovim" >& /dev/null
 
 # If not, install it
 if [ "${?}" == "1" ]; then
   # If this doesn't work, see:
   # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
-  echo "Installing NeoVim pip module."
+  echo "Installing NeoVim pip2 module."
+  pip2 install neovim
+fi
+
+# Test if the neovim pip2 module is installed
+python3 -c "import neovim" >& /dev/null
+
+# If not, install it
+if [ "${?}" == "1" ]; then
+  # If this doesn't work, see:
+  # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
+  echo "Installing NeoVim pip3 module."
   pip3 install neovim
 fi
 
@@ -26,6 +45,8 @@ fi
 rcup -x setup -t ansible -t git -t nvim -t rbenv -t rspec -t tmux -t zsh
 
 # install standard-format for js auto-formatting purposes
-npm install -g standard standard-format
+npm install -g standard standard-format neovim
+
+sudo gem install neovim
 
 echo "Setup complete."
