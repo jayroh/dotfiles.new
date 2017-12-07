@@ -39,6 +39,7 @@
   s = status --short --branch
   unstage = reset
   open = !hub browse
+  wip = "!git add . && git commit -m \"WIP\""
 
   # Typos
   puhs = push
