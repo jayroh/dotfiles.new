@@ -3,6 +3,7 @@ alias ls='ls -G'
 alias Grep='grep'
 alias hist='history'
 alias his='history'
+alias iv='nvim'
 
 # ruby
 alias be='bundle exec'
@@ -11,16 +12,20 @@ alias be='bundle exec'
 alias migrate='bundle exec rake db:migrate; bundle exec rake db:migrate RAILS_ENV=test'
 alias rollback='bundle exec rake db:rollback; bundle exec rake db:rollback RAILS_ENV=test'
 alias features='bundle exec rspec spec/features'
+alias services='bundle exec rspec spec/services'
 
 # git
 alias g='git'
+alias s='g status'
+alias gc='g commit'
+alias gs='g status'
 alias gut='git'
 alias glog='g l'
 alias gpom='g pull origin master'
 
 # rcm
 alias rcup='rcup -x setup'
-alias rcupall="rcup `ls ~/.dotfiles/tag-* | sed 's/^tag-/-t /' | tr "\n" ' '`"
+alias rcupall="rcup `ls ~/.dotfiles | grep tag- | sed 's/^tag-/-t /' | tr "\n" ' '`"
 alias reload_zsh='source ~/.zshrc'
 alias reload!='reload_zsh && rcupall'
 
