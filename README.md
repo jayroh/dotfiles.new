@@ -19,3 +19,4 @@ Install:
 * Bartender: https://www.macbartender.com/
 * Slack: https://slack.com/downloads/instructions/osx
 * Hazel: https://www.noodlesoft.com
+* Google Play Music: https://www.googleplaymusicdesktopplayer.com/
