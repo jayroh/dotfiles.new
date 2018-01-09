@@ -1,5 +1,5 @@
 let g:VtrDetachedName = "detached"
-let g:VtrPercentage = 33
+let g:VtrPercentage = 30
 
 nmap <silent> <leader>rf  :VtrFocusRunner<cr>
 nmap <silent> <leader>ro  :VtrOpenRunner<cr>
@@ -28,7 +28,12 @@ nmap <silent> <leader>gs :VtrOpenRunner<cr>:VtrSendCommandToRunner g s<cr>:VtrFo
 nmap <silent> <leader>gd :VtrOpenRunner<cr>:VtrSendCommandToRunner g diff<cr>:VtrFocusRunner<cr>
 
 " run rubocop against this file
-nmap <silent> <leader>bo :VtrOpenRunner<cr>:VtrSendCommandToRunner be rubocop -D %<cr>
+nmap <silent> <leader>bo :VtrOpenRunner<cr>:call RubocopThisFile()<cr>
 
 " run rails server using local .port file
 nmap <silent> <leader>ser :VtrOpenRunner<cr>:VtrSendCommandToRunner be rails server puma -p `cat .port`<cr>
+
+function! RubocopThisFile()
+  let local_file_path = expand('%:p')
+  execute join(['VtrSendCommandToRunner', 'bundle', 'exec', 'rubocop', '-D', local_file_path])
+endfunction
