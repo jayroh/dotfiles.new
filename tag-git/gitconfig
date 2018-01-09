@@ -36,6 +36,7 @@
   p = push
   pr = !hub pull-request
   rebase-origin = "!git checkout master && git pull origin master && git checkout - && git rebase master"
+  rubocop = "!git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop"
   s = status --short --branch
   unstage = reset
   open = !hub browse
