@@ -1,3 +1,13 @@
+snippet cont "Rails controller"
+# frozen_string_literal: true
+
+class ${1:Model}Controller < ApplicationController
+  def ${2:action}
+   $3
+  end
+end
+endsnippet
+
 snippet sidekiq "Sidekiq job"
 # frozen_string_literal: true
 class ${1}Job
