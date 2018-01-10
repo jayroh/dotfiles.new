@@ -26,7 +26,7 @@ Plug 'rhysd/vim-crystal'
 
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mitermayer/vim-prettier'
+Plug 'mitermayer/vim-prettier' " run yarn install
 
 " Plumbing to make everything nicer
 " ---------------------------------
@@ -84,7 +84,7 @@ Plug 'dietsche/vim-lastplace'
 Plug 'troydm/easybuffer.vim'
 
 " Neomake fullfills the same job Syntastic had previously, except it's async
-Plug 'benekastah/neomake'
+Plug 'benekastah/neomake' " run yarn install
 
 " Ability to define and utilize snippets of text or code
 Plug 'SirVer/ultisnips'
@@ -96,7 +96,7 @@ Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 
 " Deoplete is an on the fly auto complete for your local buffer
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim' " run yarn install
 
 " Deoplete sources for ruby. (provides the core Ruby methods)
 Plug 'fishbullet/deoplete-ruby'
