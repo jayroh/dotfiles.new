@@ -32,7 +32,7 @@
   lo = log -1 --pretty='%C(red)%H%nAuthor: %C(green)%an%n%C(magenta)%s%n%b'
   ls = branch -a
   ma = checkout master
-  mine = !git branch -a | grep jro | grep -v remotes
+  open = !hub browse
   p = push
   pr = !hub pull-request
   qs = !git add . && git commit -m "WIP" && git rebase -i HEAD~2
@@ -40,7 +40,6 @@
   rubocop = "!git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop"
   s = status --short --branch
   unstage = reset
-  open = !hub browse
   wip = !git add . && git commit -m "WIP"
 
   # Typos

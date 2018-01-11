@@ -1,0 +1,6 @@
+#!/bin/bash
+# List only branches that I have a hand in (they contain "jro" in branch name)
+
+set -e
+
+git branch -a | grep jro | sed 's/remotes\/origin\///' | sort | uniq

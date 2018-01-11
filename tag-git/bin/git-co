@@ -4,7 +4,10 @@
 set -e
 
 if [[ $# == 0 ]]; then
-  branch=$(git branch --color=always | \
+   branch=$(git branch -a --color=always | \
+       sed 's/remotes\/origin\///' | \
+       sort | \
+       uniq | \
        fzf --reverse --ansi --tac | \
        sed -E -e 's/^\*?[ \t]*//')
 else
