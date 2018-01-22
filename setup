@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Use homebrew to install packages found in both `./Brewfile` and `~/.Brewfile`
+# A bit redundant since they eventually point to the same file but it's a good
+# way to work in case one doesn't exist
+
 brew bundle
 brew bundle --file=~/.Brewfile
 
