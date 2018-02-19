@@ -15,11 +15,6 @@ function chpwd() {
   [[ -f .heroku ]] && heroku accounts:set `cat .heroku`
 }
 
-if [[ -d "$HOME/.nvm" ]]; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-fi
+. $HOME/.asdf/asdf.sh
 
-if [[ -d "$HOME/.yarn/bin" ]]; then
-  export PATH="$HOME/.yarn/bin:$PATH"
-fi
+. $HOME/.asdf/completions/asdf.bash
