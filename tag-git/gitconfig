@@ -27,6 +27,7 @@
 [alias]
   a = add
   ci = commit -v
+  circle = !hub ci-status
   d = diff
   l = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lo = log -1 --pretty='%C(red)%H%nAuthor: %C(green)%an%n%C(magenta)%s%n%b'
@@ -39,6 +40,7 @@
   rebase-origin = "!git checkout master && git pull origin master && git checkout - && git rebase master"
   rubocop = "!git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop"
   s = status --short --branch
+  spec = "!bundle exec rspec `git ls-files --modified --others spec | grep _spec`"
   unstage = reset
   wip = !git add . && git commit -m "WIP"
 
