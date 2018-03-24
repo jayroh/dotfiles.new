@@ -14,6 +14,9 @@ Plug 'kana/vim-textobj-user'          " is a dependency of ...
 Plug 'nelstrom/vim-textobj-rubyblock' " ... this.
 Plug 'ecomba/vim-ruby-refactoring'    " some ruby refactoring goodness
 
+" Elixir
+Plug 'elixir-editors/vim-elixir'
+
 " ES6
 Plug 'isRuslan/vim-es6'
 
@@ -26,7 +29,11 @@ Plug 'rhysd/vim-crystal'
 
 " Typescript
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mitermayer/vim-prettier' " run yarn install
+
+" Markdown
+Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/goyo.vim'
+Plug 'reedes/vim-pencil'
 
 " Plumbing to make everything nicer
 " ---------------------------------
@@ -85,6 +92,9 @@ Plug 'troydm/easybuffer.vim'
 
 " Neomake fullfills the same job Syntastic had previously, except it's async
 Plug 'benekastah/neomake' " run yarn install
+
+" Autoformat code!
+Plug 'sbdchd/neoformat'
 
 " Ability to define and utilize snippets of text or code
 Plug 'SirVer/ultisnips'

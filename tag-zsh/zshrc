@@ -15,6 +15,9 @@ function chpwd() {
   [[ -f .heroku ]] && heroku accounts:set `cat .heroku`
 }
 
-. $HOME/.asdf/asdf.sh
+[[ -d "$HOME/.yarn/bin" ]] && export PATH="$HOME/.yarn/bin:$PATH"
 
-. $HOME/.asdf/completions/asdf.bash
+if [[ -d "$HOME/.asdf" ]]; then
+  . $HOME/.asdf/asdf.sh
+  . $HOME/.asdf/completions/asdf.bash
+fi
