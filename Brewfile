@@ -14,4 +14,7 @@ brew "tmux"
 brew "zsh"
 
 tap "thoughtbot/formulae"
+tap luckyframework/homebrew-lucky
+
 brew "rcm"
+brew "lucky"

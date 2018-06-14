@@ -17,9 +17,6 @@ Plug 'ecomba/vim-ruby-refactoring'    " some ruby refactoring goodness
 " Elixir
 Plug 'elixir-editors/vim-elixir'
 
-" ES6
-Plug 'isRuslan/vim-es6'
-
 " HTML
 Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -27,8 +24,10 @@ Plug 'editorconfig/editorconfig-vim'
 " Crystal
 Plug 'rhysd/vim-crystal'
 
-" Typescript
+" JavaScript, ES6, Typescript
+Plug 'isRuslan/vim-es6'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Markdown
 Plug 'plasticboy/vim-markdown'

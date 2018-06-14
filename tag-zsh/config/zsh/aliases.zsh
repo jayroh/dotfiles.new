@@ -19,8 +19,10 @@ alias g='git'
 alias s='g status'
 alias gc='g commit'
 alias gs='g status'
+alias gpf='g push -f'
 alias gut='git'
 alias glog='g l'
+alias grom='g fetch origin && g rebase origin/master'
 alias gpom='g pull origin master'
 
 # rcm

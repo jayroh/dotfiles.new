@@ -29,6 +29,7 @@
   ci = commit -v
   circle = !hub ci-status
   d = diff
+  dif = diff
   l = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lo = log -1 --pretty='%C(red)%H%nAuthor: %C(green)%an%n%C(magenta)%s%n%b'
   ls = branch -a
