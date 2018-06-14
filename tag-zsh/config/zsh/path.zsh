@@ -3,7 +3,7 @@
 
 path=( "/usr/bin" "/bin" "/usr/sbin" "/sbin" )
 path=( "/Applications/Postgres.app/Contents/Versions/latest/bin" $path )
-path=( "node_modules/.bin" "$HOME/.bin" "$HOME/.rbenv/bin" "/usr/local/bin" $path )
+path=( "$HOME/.npm-packages/bin" "node_modules/.bin" "$HOME/.bin" "$HOME/.rbenv/bin" "/usr/local/bin" $path )
 path=( "/usr/local/opt/elasticsearch@2.4/bin" $path )
 path=( "$JAVA_HOME/jre/bin" $path )
 path=( "/usr/lib/go-1.8/bin" $path )

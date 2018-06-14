@@ -14,15 +14,15 @@ snippet init
 snippet it{
 	it { should ${1}
 snippet it'
-	it '${1}' do
+	it "${1}" do
 		${2}
 	end
 snippet it
-	it '${1}' do
+	it "${1}" do
 		${2}
 	end
 snippet it"
-	it '${1}' do
+	it "${1}" do
 		${2}
 	end
 snippet have_db
@@ -38,28 +38,28 @@ snippet fact
 snippet pry
 	binding.pry
 snippet gem
-	gem '${1}'
+	gem "${1}"
 # rspec
 snippet rhelp
 	# frozen_string_literal: true
 
-	require 'rails_helper'
+	require "rails_helper"
 snippet shelp
 	# frozen_string_literal: true
 
-	require 'spec_helper'
+	require "spec_helper"
 snippet desc
 	RSpec.describe ${1}, ${2:type: :model} do
 		${3}
 	end
 snippet cont
-	context '${1}' do
+	context "${1}" do
 		${2}
 	end
 snippet feat
-	RSpec.feature '${1}', type: :feature do
-		context '${2}' do
-			scenario '${3}' do
+	RSpec.feature "${1}", type: :feature do
+		context "${2}" do
+			scenario "${3}" do
 				${4}
 			end
 		end
@@ -71,28 +71,28 @@ snippet featobj
 		end
 	end
 snippet scen
-	scenario '${1}' do
+	scenario "${1}" do
 		${2}
 	end
 snippet request
-	require 'rails_helper'
+	require "rails_helper"
 
-	RSpec.describe '${1}', type: :request do
-		describe 'GET /path' do
+	RSpec.describe "${1}", type: :request do
+		describe "GET /path" do
 			let(:user){ create(:user) }
 
-			it 'is successful' do
+			it "is successful" do
 				#  allow_any_instance_of(ApplicationController)
 				#    .to receive(:current_user)
 				#    .and_return(user)
 
 				payload = {
 					resource: {
-						name: 'joel',
+						name: "joel",
 					}
 				}
 
-				get '/path', payload, {}
+				get "/path", payload, {}
 
 				expect(response).to have_http_status(200)
 			end
