@@ -4,6 +4,8 @@ alias Grep='grep'
 alias hist='history'
 alias his='history'
 alias iv='nvim'
+alias vi='nvim'
+alias vim='nvim'
 
 # ruby
 alias be='bundle exec'
