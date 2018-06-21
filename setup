@@ -8,7 +8,7 @@ brew bundle
 brew bundle --file=~/.Brewfile
 
 if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells
-then 
+then
   echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
 fi
 
@@ -51,11 +51,14 @@ if [ ! -e ~/.config/nvim/autoload/plug.vim ]; then
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-rcup -x setup -t ansible -t git -t nvim -t rbenv -t rspec -t tmux -t zsh
+rcup -x setup -t ruby -t bash -t node -t ansible -t git -t nvim -t rbenv -t rspec -t tmux -t zsh
 
-# install standard-format for js auto-formatting purposes
-npm install -g standard standard-format neovim typescript
+git clone https://github.com/rbenv/rbenv-default-gems.git \
+  $(rbenv root)/plugins/rbenv-default-gems
 
-sudo gem install neovim
+# Install command line tools if you haven't already
+xcode-select --install
+# Enable command line tools
+sudo xcode-select --switch /Library/Developer/CommandLineTools
 
 echo "Setup complete."
