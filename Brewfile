@@ -12,6 +12,7 @@ brew "rbenv"
 brew "the_silver_searcher"
 brew "tmux"
 brew "zsh"
+brew "graphviz"
 
 tap "thoughtbot/formulae"
 tap luckyframework/homebrew-lucky
