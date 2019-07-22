@@ -6,6 +6,7 @@ alias his='history'
 alias iv='nvim'
 alias vi='nvim'
 alias vim='nvim'
+alias ctags="`brew --prefix`/bin/ctags"
 
 # ruby
 alias be='bundle exec'
@@ -21,11 +22,19 @@ alias g='git'
 alias s='g status'
 alias gc='g commit'
 alias gs='g status'
-alias gpf='g push -f'
+alias gpf='g push --force-with-lease'
 alias gut='git'
 alias glog='g l'
 alias grom='g fetch origin && g rebase origin/master'
 alias gpom='g pull origin master'
+alias stash='g add . && g stash'
+alias pop='g stash pop'
+alias skip='g rebase --skip'
+alias cont='g rebase --continue'
+alias unstage='g reset'
+
+# open links in current commit in browser
+alias resolve="for link in \`git show -s --format=%B HEAD | grep 'https.*\(jira\|honeybadger\)'\`; open \$link;"
 
 # rcm
 alias rcup='rcup -x setup'
