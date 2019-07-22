@@ -6,3 +6,6 @@ nnoremap <leader><leader> <c-^>
 
 " Set <leader>c to clear search highlighting
 nnoremap <leader>nh :nohlsearch<cr>
+
+" Run ctags
+nnoremap <leader>ct :!ctags -R .
