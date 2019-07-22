@@ -38,12 +38,14 @@
   p = push
   pr = !hub pull-request
   qs = !git add . && git commit -m "WIP" && git rebase -i HEAD~2
+  rebae = rebase
+  rebasse = rebase
   rebase-origin = "!git checkout master && git pull origin master && git checkout - && git rebase master"
   rubocop = "!git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop"
   s = status --short --branch
   spec = "!bundle exec rspec `git ls-files --modified --others spec | grep _spec`"
   unstage = reset
-  wip = !git add . && git commit -m "WIP"
+  wip = !git add . && git commit -m '[ci skip] WIP'
 
   # Typos
   puhs = push

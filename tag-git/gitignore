@@ -3,6 +3,8 @@ pull_request_template.md
 .heroku
 .trello
 .port
+.jshintrc
 erd.pdf
 tags
 pull_request_template.md
+nohup.out

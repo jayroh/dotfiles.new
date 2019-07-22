@@ -4,12 +4,7 @@
 set -e
 
 if [[ $# == 0 ]]; then
-  branch=$(git branch -a --color=always  |  \
-             sed 's/remotes\/origin\///' |  \
-             sed -E -e 's/^\*?[ \t]*//'  | \
-             sort | \
-             uniq | \
-             fzf --reverse --ansi --tac)
+  branch=$(git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)' | fzf --reverse --ansi --tac)
 else
   branch="$1"
 fi
