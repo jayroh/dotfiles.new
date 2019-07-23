@@ -5,9 +5,8 @@ path=( "/usr/bin" "/bin" "/usr/sbin" "/sbin" )
 path=( "$HOME/.npm-packages/bin" "node_modules/.bin" "$HOME/.bin" "$HOME/.rbenv/bin" "/usr/local/bin" $path )
 path=( "/usr/local/opt/elasticsearch@2.4/bin" $path )
 path=( "$JAVA_HOME/jre/bin" $path )
-path=( "/usr/lib/go-1.8/bin" $path )
-path=( "/Applications/Postgres.app/Contents/Versions/latest/bin" $path )
 path=( "/usr/local/opt/imagemagick@6/bin" $path )
+path=( "/Applications/Postgres.app/Contents/Versions/latest/bin" $path )
 
 [[ -d $HOME/Qt5.5.1/5.5/clang_64/bin ]] && path=( "$HOME/Qt5.5.1/5.5/clang_64/bin" $path )
 
