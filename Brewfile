@@ -28,7 +28,13 @@ brew "xvid"
 brew "zsh"
 
 tap "thoughtbot/formulae"
-tap luckyframework/homebrew-lucky
-
 brew "rcm"
-brew "lucky"
+
+tap "homebrew/cask"
+cask_args appdir: "/Applications"
+cask "fork"
+
+mas "Irvue", id: 1039633667
+mas "1Password7", id: 1333542190
+mas "Pixelmator", id: 407963104
+
