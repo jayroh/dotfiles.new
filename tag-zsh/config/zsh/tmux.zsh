@@ -4,7 +4,7 @@ export TERM=screen-256color
 t() {
   PROJ_NAME=$(basename $PWD | sed 's/\.//g')
 
-  tmux has-session -t safety2 2>/dev/null
+  tmux has-session -t $PROJ_NAME 2>/dev/null
 
   if [ "$?" -eq 1 ] ; then
     echo "Project not found. Creating and configuring."
