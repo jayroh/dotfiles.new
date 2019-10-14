@@ -53,6 +53,8 @@ cask "iterm2"
 cask "java"
 cask "marshallofsound-google-play-music-player"
 cask "postgres"
+cask "qlvideo"
+cask "vlc"
 
 mas "Irvue", id: 1039633667
 mas "1Password7", id: 1333542190
