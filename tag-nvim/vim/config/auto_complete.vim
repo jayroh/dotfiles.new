@@ -8,3 +8,7 @@ try
 catch  /.*/
   " no-op
 endtry
+
+" Turn on word completion. The following will let us press CTRL-N or CTRL-P in
+" insert-mode to complete the word we’re typing
+set complete+=kspell
