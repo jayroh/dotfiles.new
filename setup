@@ -62,3 +62,9 @@ xcode-select --install
 sudo xcode-select --switch /Library/Developer/CommandLineTools
 
 echo "Setup complete."
+
+echo ""
+echo "Run the following to get vim situated:"
+echo ""
+echo "$ nvim +'PlugInstall --sync' +qa"
+echo ""
