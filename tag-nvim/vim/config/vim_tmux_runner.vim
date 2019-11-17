@@ -27,16 +27,8 @@ nmap <silent> <leader>gs :VtrOpenRunner<cr>:VtrSendCommandToRunner g s<cr>:VtrFo
 " display git diff in pane
 nmap <silent> <leader>gd :VtrOpenRunner<cr>:VtrSendCommandToRunner g diff<cr>:VtrFocusRunner<cr>
 
-" run rubocop against this file
-nmap <silent> <leader>bo :VtrOpenRunner<cr>:call RubocopThisFile()<cr>
-
 " run rails server using local .port file
 nmap <silent> <leader>ser :VtrOpenRunner<cr>:VtrSendCommandToRunner be rails server puma -p `cat .port`<cr>
 
 " run rake
 nmap <silent> <leader>bra :VtrOpenRunner<cr>:VtrSendCommandToRunner be rake<cr>
-
-function! RubocopThisFile()
-  let local_file_path = expand('%:p')
-  execute join(['VtrSendCommandToRunner', 'bundle', 'exec', 'rubocop', '-D', '-a', local_file_path])
-endfunction

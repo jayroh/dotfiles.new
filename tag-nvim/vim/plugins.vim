@@ -1,5 +1,8 @@
 Plug 'nanotech/jellybeans.vim'
 
+" Linting
+Plug 'w0rp/ale', { 'do': 'yarn add eslint babel-eslint eslint-plugin-react' }
+
 " Language-specific plugins
 
 " Golang
@@ -18,13 +21,14 @@ Plug 'ecomba/vim-ruby-refactoring'    " some ruby refactoring goodness
 Plug 'elixir-editors/vim-elixir'
 
 " HTML
-Plug 'mattn/emmet-vim'
 Plug 'editorconfig/editorconfig-vim'
 
 " Crystal
 Plug 'rhysd/vim-crystal'
 
-" JavaScript, ES6, Typescript
+" JavaScript, ES6, Typescript, Vue, React
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'isRuslan/vim-es6'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -116,6 +120,11 @@ Plug 'Raimondi/delimitMate'
 
 " A Vim wrapper for running tests on different granularities.
 Plug 'janko-m/vim-test'
+
+" Switching from single to multiple line statements
+" gS to split into multiple lines
+" gJ to join into one line
+Plug 'AndrewRadev/splitjoin.vim'
 
 " Vim and Tmux sitting in a tree ...
 " ----------------------------------
