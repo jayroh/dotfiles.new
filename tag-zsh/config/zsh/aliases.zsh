@@ -16,6 +16,7 @@ alias migrate='bundle exec rake db:migrate; bundle exec rake db:migrate RAILS_EN
 alias rollback='bundle exec rake db:rollback; bundle exec rake db:rollback RAILS_ENV=test'
 alias features='bundle exec rspec spec/features'
 alias services='bundle exec rspec spec/services'
+alias drake='./docker/run bundle exec rake'
 
 # git
 alias g='git'
@@ -26,6 +27,7 @@ alias gpf='g push --force-with-lease'
 alias gut='git'
 alias glog='g l'
 alias grom='g fetch origin && g rebase origin/master'
+alias grim='g fetch origin && g rebase -i origin/master'
 alias gpom='g pull origin master'
 alias stash='g add . && g stash'
 alias pop='g stash pop'
