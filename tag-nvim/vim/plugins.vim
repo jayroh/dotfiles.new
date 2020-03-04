@@ -42,6 +42,9 @@ Plug 'reedes/vim-pencil'
 " Plumbing to make everything nicer
 " ---------------------------------
 
+" Run some restful requests directly from a vim buffer
+Plug 'diepm/vim-rest-console'
+
 " Sort using text objects and motions
 Plug 'christoomey/vim-sort-motion'
 
@@ -63,6 +66,10 @@ Plug 'tpope/vim-fugitive'
 
 " Auto-add `end` in Ruby, `endfunction` in Vim, etc
 Plug 'tpope/vim-endwise'
+
+" Easily search for, substitute, and abbreviate multiple variants of a word.
+" Also coerce variable names to other styles (snake case, camel case, etc)
+Plug 'tpope/vim-abolish'
 
 " Fuzzy-finder
 Plug 'ctrlpvim/ctrlp.vim'
@@ -100,20 +107,11 @@ Plug 'benekastah/neomake' " run yarn install
 " Autoformat code!
 Plug 'sbdchd/neoformat'
 
-" Ability to define and utilize snippets of text or code
-Plug 'SirVer/ultisnips'
-
-" <Tab> indents or triggers autocomplete, smartly
-Plug 'ervandew/supertab'
-
 " Line up text nicely (for projects that are used to the convention)
 Plug 'godlygeek/tabular'
 
-" Deoplete is an on the fly auto complete for your local buffer
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" Deoplete sources for ruby. (provides the core Ruby methods)
-Plug 'fishbullet/deoplete-ruby'
+" Let's try COC for auto complete and LSP
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Automatically match any brackets, parentheses or quotes when you’re typing
 Plug 'Raimondi/delimitMate'

@@ -1,0 +1,6 @@
+{
+  "codeLens.enable": true,
+  "solargraph.useBundler": true,
+  "snippets.userSnippetsDirectory": "~/.dotfiles/tag-nvim/config/nvim/UltiSnips",
+  "snippets.ultisnips.directories": ["~/.dotfiles/tag-nvim/config/nvim/UltiSnips"]
+}

@@ -1,14 +1,13 @@
-let g:deoplete#enable_at_startup=1
-let g:SuperTabDefaultCompletionType = "<c-n>"
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
-try
-  call remote#host#RegisterPlugin('python3', '/Users/shougo/.vim/bundle/deoplete.nvim/rplugin/python3/deoplete.py', [
-      \ {'sync': 1, 'name': 'DeopleteInitializePython', 'type': 'command', 'opts': {}},
-     \ ])
-catch  /.*/
-  " no-op
-endtry
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-" Turn on word completion. The following will let us press CTRL-N or CTRL-P in
-" insert-mode to complete the word we’re typing
-set complete+=kspell
+let g:coc_snippet_next = '<tab>'
+let g:coc_global_extensions = ['coc-solargraph']
