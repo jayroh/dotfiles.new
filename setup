@@ -67,4 +67,7 @@ echo ""
 echo "Run the following to get vim situated:"
 echo ""
 echo "$ nvim +'PlugInstall --sync' +qa"
+echo "$ nvim -c 'CocInstall -sync coc-css coc-html coc-json coc-snippets coc-solargraph coc-tailwindcss coc-tsserver|q'"
 echo ""
+
+
