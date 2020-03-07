@@ -3,7 +3,8 @@
 
 path=( "/usr/bin" "/bin" "/usr/sbin" "/sbin" )
 path=( "$HOME/.npm-packages/bin" "node_modules/.bin" "$HOME/.bin" "$HOME/.rbenv/bin" "/usr/local/bin" $path )
-path=( "/usr/local/opt/elasticsearch@2.4/bin" $path )
+path=( "$HOME/.npm-packages/bin" "node_modules/.bin" "$HOME/.bin" "$HOME/.rbenv/bin" "/usr/local/bin" $path )
+path=( "$HOME/.local/bin" $path )
 path=( "$JAVA_HOME/jre/bin" $path )
 path=( "/usr/local/opt/imagemagick@6/bin" $path )
 path=( "/Applications/Postgres.app/Contents/Versions/latest/bin" $path )

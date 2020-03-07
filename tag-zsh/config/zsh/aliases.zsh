@@ -6,7 +6,10 @@ alias his='history'
 alias iv='nvim'
 alias vi='nvim'
 alias vim='nvim'
-alias ctags="`brew --prefix`/bin/ctags"
+
+if [ -x "$(command -v brew)" ]; then
+  alias ctags="`brew --prefix`/bin/ctags"
+fi
 
 # ruby
 alias be='bundle exec'
