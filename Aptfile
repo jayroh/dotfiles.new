@@ -9,8 +9,10 @@ git
 gpg
 graphviz
 hub
+libcurl4-openssl-dev
 libjemalloc-dev
 libjemalloc2
+libpq-dev
 libxml2
 libxslt1-dev
 libxslt1.1
@@ -19,8 +21,10 @@ libxvidcore4
 memcached
 neovim
 nodejs
+openjdk-11-jdk
 openssl
 pgcli
+python-psycopg2
 python-testresources
 rbenv
 rcm
@@ -30,6 +34,8 @@ s3cmd
 silversearcher-ag
 tmux
 unrar
+variety
+vlc
 webp
 x264
 x265
