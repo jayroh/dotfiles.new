@@ -1,18 +1,35 @@
-#!/bin/sh
+#!/bin/env bash
 
 # Use homebrew to install packages found in both `./Brewfile` and `~/.Brewfile`
 # A bit redundant since they eventually point to the same file but it's a good
 # way to work in case one doesn't exist
 
-brew bundle
-brew bundle --file=~/.Brewfile
+machine=`uname -s`
 
-if ! grep -Fxq "/usr/local/bin/zsh" /etc/shells
-then
-  echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+if [ "$machine" == "Linux" ]; then
+  ZSH_LOCATION="/usr/bin/zsh"
+  sudo add-apt-repository -y ppa:martin-frost/thoughtbot-rcm
+  sudo apt-get update
+  < Aptfile xargs sudo apt-get install -y
+
+  # install pips
+  curl -o /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py
+  sudo python2 /tmp/get-pip.py
+  sudo python3 /tmp/get-pip.py
+  python2 -m pip install --user --upgrade pip
+  python3 -m pip install --user --upgrade pip
+else
+  ZSH_LOCATION="/usr/local/bin/zsh"
+  brew bundle
+  brew bundle --file=~/Brewfile
 fi
 
-chsh -s /usr/local/bin/zsh
+if ! grep -Fxq $ZSH_LOCATION /etc/shells
+then
+  echo $ZSH_LOCATION | sudo tee -a /etc/shells
+fi
+
+chsh -s `which zsh`
 
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -56,10 +73,12 @@ rcup -x setup -t ruby -t bash -t node -t ansible -t git -t nvim -t rbenv -t rspe
 git clone https://github.com/rbenv/rbenv-default-gems.git \
   $(rbenv root)/plugins/rbenv-default-gems
 
-# Install command line tools if you haven't already
-xcode-select --install
-# Enable command line tools
-sudo xcode-select --switch /Library/Developer/CommandLineTools
+if [ "$machine" != "Linux" ]; then
+  # Install command line tools if you haven't already
+  xcode-select --install
+  # Enable command line tools
+  sudo xcode-select --switch /Library/Developer/CommandLineTools
+fi
 
 echo "Setup complete."
 
