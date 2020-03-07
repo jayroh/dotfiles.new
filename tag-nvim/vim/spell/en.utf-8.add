@@ -10,3 +10,4 @@ rubocop
 tap
 tmux
 vim
+serializer
