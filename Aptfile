@@ -10,6 +10,7 @@ git
 gpg
 graphviz
 hub
+jq
 libcurl4-openssl-dev
 libgmp-dev
 libjemalloc-dev
@@ -34,6 +35,11 @@ redis
 ruby-build
 s3cmd
 silversearcher-ag
+sway
+sway-backgrounds
+swaybg
+swayidle
+swaylock
 tmux
 unrar
 vagrant

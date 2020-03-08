@@ -60,6 +60,7 @@ cask "qlimagesize"
 cask "qlmarkdown"
 cask "qlvideo"
 cask "vlc"
+cask "zerotier-one"
 
 mas "Irvue", id: 1039633667
 mas "1Password7", id: 1333542190
