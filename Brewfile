@@ -1,3 +1,4 @@
+brew "ansible"
 brew "autojump"
 brew "asdf"
 brew "awscli"

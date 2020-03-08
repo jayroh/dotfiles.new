@@ -1,3 +1,4 @@
+ansible
 autojump
 awscli
 ctags
@@ -10,6 +11,7 @@ gpg
 graphviz
 hub
 libcurl4-openssl-dev
+libgmp-dev
 libjemalloc-dev
 libjemalloc2
 libpq-dev
@@ -34,6 +36,7 @@ s3cmd
 silversearcher-ag
 tmux
 unrar
+vagrant
 variety
 vlc
 webp
