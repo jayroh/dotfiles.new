@@ -1,7 +1,7 @@
 " Stolen wholesale from Gabe Berke-Williams who stole it from christoomey,
 " whose dotfiles you really should check out:
 " https://github.com/christoomey/dotfiles
-"
+
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/.vim/' . a:directory . '/*.vim'
   for config_file in split(glob(directory_splat), '\n')
@@ -57,3 +57,5 @@ silent! colorscheme jellybeans
 
 " vim-textobj-rubyblock requires that the matchit.vim plugin is enabled.
 runtime macros/matchit.vim
+
+highlight Comment cterm=italic gui=italic

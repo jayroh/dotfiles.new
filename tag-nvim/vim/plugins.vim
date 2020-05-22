@@ -33,6 +33,7 @@ Plug 'isRuslan/vim-es6'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'posva/vim-vue'
+Plug 'mvolkmann/vim-js-arrow-function'
 
 " Markdown
 Plug 'plasticboy/vim-markdown'

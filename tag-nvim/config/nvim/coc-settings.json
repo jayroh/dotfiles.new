@@ -1,5 +1,5 @@
 {
-  "codeLens.enable": true,
+  "codeLens.enable": false,
   "solargraph.useBundler": true,
   "snippets.ultisnips.directories": ["~/.dotfiles/tag-nvim/config/nvim/UltiSnips"],
   "tailwindCSS.htmlLanguages": [
