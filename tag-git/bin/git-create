@@ -1,9 +1,5 @@
 #!/bin/bash
 
 BRANCH=$1
-CURRENT_BRANCH=`git branch | grep \* | cut -d' ' -f2`
 
-git push origin $CURRENT_BRANCH:refs/heads/$BRANCH
-git fetch origin
-git branch --track $BRANCH origin/$BRANCH
-git checkout $BRANCH
+git checkout -b $BRANCH

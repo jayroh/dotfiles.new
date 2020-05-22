@@ -1,0 +1,11 @@
+#!/bin/bash
+# Delete branch locally and remotely. Used by `git mm`
+
+set -e
+
+LAST_COMMIT=`git log HEAD --format="%s%n%n%b" HEAD^..HEAD`
+git add .
+git commit -m 'WIP'
+git reset --soft HEAD~2
+git commit -m "$LAST_COMMIT"
+unset LAST_COMMIT

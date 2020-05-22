@@ -1,0 +1,7 @@
+#!/bin/bash
+
+git push
+
+if [[ $? != 0 ]]; then
+  git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+fi

@@ -2,8 +2,8 @@
 # https://github.com/gabebw/dotfiles/blob/master/tag-git/gitconfig
 
 [user]
-  email = joel.oliveira@gmail.com
-  name = Joel Oliveira
+	email = joel.oliveira@gmail.com
+	name = Joel Oliveira
 [github]
   user = jayroh
 [core]
@@ -35,9 +35,7 @@
   ls = branch -a
   ma = checkout master
   open = !hub browse
-  p = push
   pr = !hub pull-request
-  qs = !git add . && git commit -m "WIP" && git rebase -i HEAD~2
   rebae = rebase
   rebasse = rebase
   rebase-origin = "!git checkout master && git pull origin master && git checkout - && git rebase master"
