@@ -1,4 +1,5 @@
 # If authorized_keys does not exist, create it
+[[ ! -d ~/.ssh ]] && mkdir -p ~/.ssh
 [[ ! -f ~/.ssh/authorized_keys ]] && touch ~/.ssh/authorized_keys
 
 if [[ ! -S ~/.ssh/ssh_auth_sock ]]; then
