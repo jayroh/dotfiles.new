@@ -1,0 +1,8 @@
+#!/bin/bash
+# Checkout branch using fzf
+
+set -e
+
+branch=$(git remote show origin | grep "HEAD branch" | cut -d ":" -f 2 | tr -d '[:space:]')
+
+git checkout "$branch"
