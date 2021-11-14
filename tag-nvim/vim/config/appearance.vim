@@ -15,8 +15,8 @@ let g:lightline = {
       \   'filename': 'LightLineFilename'
       \ },
       \ 'colorscheme': 'jellybeans',
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
 function! LightLineFilename()

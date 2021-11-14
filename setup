@@ -90,6 +90,8 @@ if [ "$machine" != "Linux" ]; then
   xcode-select --install
   # Enable command line tools
   sudo xcode-select --switch /Library/Developer/CommandLineTools
+  # Install fonts
+  open -b com.apple.FontBook ./misc/*.[ot]tf
 fi
 
 echo "Setup complete."
@@ -100,5 +102,5 @@ echo ""
 echo "$ nvim +'PlugInstall --sync' +qa"
 echo "$ nvim -c 'CocInstall -sync coc-css coc-html coc-json coc-snippets coc-solargraph coc-tailwindcss coc-tsserver|q'"
 echo ""
-
-
+echo "And set iTerm's font to 'MesloLGS NF'"
+echo ""
