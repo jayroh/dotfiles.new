@@ -1,3 +1,9 @@
+if [ "$(uname -m 2> /dev/null)" = "arm64" ]; then
+  export HOMEBREW_HOME="/opt/homebrew/opt"
+else
+  export HOMEBREW_HOME="/usr/local/opt"
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -28,8 +34,8 @@ function chpwd() {
 
 if [[ -d "$HOME/.nvm" ]]; then
   export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+  [ -s "$HOMEBREW_HOME/nvm/nvm.sh" ] && . "$HOMEBREW_HOME/nvm/nvm.sh"
+  [ -s "$HOMEBREW_HOME/nvm/etc/bash_completion.d/nvm" ] && . "$HOMEBREW_HOME/nvm/etc/bash_completion.d/nvm"
 fi
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme

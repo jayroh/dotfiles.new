@@ -29,14 +29,26 @@ alias gs='g status'
 alias gpf='g push --force-with-lease'
 alias gut='git'
 alias glog='g l'
-alias grom="g fetch origin && g rebase origin/$(git remote show origin | grep "HEAD branch" | cut -d ":" -f 2 | tr -d '[:space:]')"
-alias grim="g fetch origin && g rebase -i origin/$(git remote show origin | grep "HEAD branch" | cut -d ":" -f 2 | tr -d '[:space:]')"
-alias gpom="g pull origin $(git remote show origin | grep "HEAD branch" | cut -d ":" -f 2)"
 alias stash='g add . && g stash'
 alias pop='g stash pop'
 alias skip='g rebase --skip'
 alias cont='g rebase --continue'
 alias unstage='g reset'
+
+function grom() {
+  BASE_BRANCH="$(git remote show origin | grep 'HEAD branch' | cut -d ':' -f 2 | tr -d '[:space:]')"
+  git fetch origin && g rebase origin/$BASE_BRANCH
+}
+
+function grim() {
+  BASE_BRANCH="$(git remote show origin | grep 'HEAD branch' | cut -d ':' -f 2 | tr -d '[:space:]')"
+  git fetch origin && g rebase -i origin/$BASE_BRANCH
+}
+
+function gpom() {
+  BASE_BRANCH="$(git remote show origin | grep 'HEAD branch' | cut -d ':' -f 2 | tr -d '[:space:]')"
+  git pull origin $BASE_BRANCH
+}
 
 # open links in current commit in browser
 alias resolve="for link in \`git show -s --format=%B HEAD | grep 'https.*\(jira\|honeybadger\)'\`; open \$link;"
