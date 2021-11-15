@@ -59,3 +59,6 @@ silent! colorscheme jellybeans
 runtime macros/matchit.vim
 
 highlight Comment cterm=italic gui=italic
+
+" config ruby host
+let g:ruby_host_prog = '~/.asdf/installs/ruby/3.0.2/bin/neovim-ruby-host'

@@ -59,7 +59,7 @@ if [ "${?}" == "1" ]; then
   # If this doesn't work, see:
   # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
   echo "Installing NeoVim pip2 module."
-  pip2 install neovim
+  pip2 install neovim pynvim
 fi
 
 # Test if the neovim pip2 module is installed
@@ -70,7 +70,7 @@ if [ "${?}" == "1" ]; then
   # If this doesn't work, see:
   # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
   echo "Installing NeoVim pip3 module."
-  pip3 install neovim
+  pip3 install neovim pynvim
 fi
 
 # install plug vim plugin if it's not there already
