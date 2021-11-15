@@ -23,9 +23,14 @@ if [ "$machine" == "Linux" ]; then
   python2 -m pip install --user --upgrade pip
   python3 -m pip install --user --upgrade pip
 else
-  ZSH_LOCATION="/usr/local/bin/zsh"
+  if [ "$(uname -m 2> /dev/null)" == "arm64" ]; then
+    ZSH_LOCATION="/opt/homebrew/bin/zsh"
+  else
+    ZSH_LOCATION="/usr/local/bin/zsh"
+  fi
+
   brew bundle
-  brew bundle --file=~/Brewfile
+  brew bundle --file=~/.Brewfile
 fi
 
 if ! grep -Fxq $ZSH_LOCATION /etc/shells
@@ -40,10 +45,10 @@ tic -x ~/.dotfiles/misc/tmux.terminfo
 tic -x ~/.dotfiles/misc/xterm-256color-italic.terminfo
 
 # Install powerlevel10k
-git clone https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+[ -d ~/.powerlevel10k ] || git clone https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 
 # Install vim-plug
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+[ -f ~/.local/share/nvim/site/autoload/plug.vim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 if [ ! -e ~/.bin/vim ]; then
@@ -59,7 +64,7 @@ if [ "${?}" == "1" ]; then
   # If this doesn't work, see:
   # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
   echo "Installing NeoVim pip2 module."
-  pip2 install neovim pynvim
+  command -v pip2 && pip2 install neovim pynvim
 fi
 
 # Test if the neovim pip2 module is installed
@@ -70,7 +75,7 @@ if [ "${?}" == "1" ]; then
   # If this doesn't work, see:
   # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
   echo "Installing NeoVim pip3 module."
-  pip3 install neovim pynvim
+  command -v pip3 && pip3 install neovim pynvim
 fi
 
 # install plug vim plugin if it's not there already
@@ -82,7 +87,7 @@ fi
 
 rcup -x setup -t ruby -t bash -t node -t ansible -t git -t nvim -t rbenv -t rspec -t tmux -t zsh
 
-git clone https://github.com/rbenv/rbenv-default-gems.git \
+[ -d $(rbenv root)/plugins/rbenv-default-gems ] || git clone https://github.com/rbenv/rbenv-default-gems.git \
   $(rbenv root)/plugins/rbenv-default-gems
 
 if [ "$machine" != "Linux" ]; then
