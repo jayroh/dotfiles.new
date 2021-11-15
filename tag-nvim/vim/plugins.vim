@@ -17,14 +17,8 @@ Plug 'kana/vim-textobj-user'          " is a dependency of ...
 Plug 'nelstrom/vim-textobj-rubyblock' " ... this.
 Plug 'ecomba/vim-ruby-refactoring'    " some ruby refactoring goodness
 
-" Elixir
-Plug 'elixir-editors/vim-elixir'
-
 " HTML
 Plug 'editorconfig/editorconfig-vim'
-
-" Crystal
-Plug 'rhysd/vim-crystal'
 
 " JavaScript, ES6, Typescript, Vue, React
 Plug 'pangloss/vim-javascript'
@@ -42,9 +36,6 @@ Plug 'reedes/vim-pencil'
 
 " Plumbing to make everything nicer
 " ---------------------------------
-
-" Run some restful requests directly from a vim buffer
-Plug 'diepm/vim-rest-console'
 
 " Sort using text objects and motions
 Plug 'christoomey/vim-sort-motion'
