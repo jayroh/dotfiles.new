@@ -5,9 +5,9 @@ nmap <silent> <leader>rf  :VtrFocusRunner<cr>
 nmap <silent> <leader>ro  :VtrOpenRunner<cr>
 nmap <silent> <leader>rx  :VtrKillRunner<cr>
 nmap <silent> <leader>rc  :VtrKillRunner<cr>
-nmap <silent> <leader>rv  :VtrSendLinesToRunner<cr>
 nmap <silent> <leader>rd  :VtrSendCtrlD<cr>
 nmap <silent> <leader>rcl :VtrClearRunner<cr>
+noremap <C-f> :VtrSendLinesToRunner<cr>
 
 " send `q` to pane
 nmap <silent> <leader>q   :VtrSendCommandToRunner q<cr>:VtrKillRunner<cr>
