@@ -56,6 +56,10 @@ Plug 'tomtom/tcomment_vim'
 " Git bindings
 Plug 'tpope/vim-fugitive'
 
+" Octo GitHub goodness
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'pwntester/octo.nvim'
+
 " Auto-add `end` in Ruby, `endfunction` in Vim, etc
 Plug 'tpope/vim-endwise'
 
