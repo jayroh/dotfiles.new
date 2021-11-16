@@ -111,7 +111,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 
 " A Vim wrapper for running tests on different granularities.
-Plug 'janko-m/vim-test'
+Plug 'vim-test/vim-test'
 
 " Switching from single to multiple line statements
 " gS to split into multiple lines

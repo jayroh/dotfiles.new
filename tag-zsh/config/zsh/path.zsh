@@ -12,15 +12,17 @@ path=( "$HOME/.npm-packages/bin" "node_modules/.bin" "$HOME/.bin" "$HOME/.rbenv/
 path=( "$HOME/.npm-packages/bin" "node_modules/.bin" "$HOME/.bin" "$HOME/.rbenv/bin" "/usr/local/bin" $path )
 path=( "$HOME/.local/bin" $path )
 path=( "$JAVA_HOME/jre/bin" $path )
-path=( "$HOMEBREW_HOME/opt/imagemagick@6/bin" $path )
 path=( "/Applications/Postgres.app/Contents/Versions/latest/bin" $path )
 path=( "$HOMEBREW_HOME/bin" $path )
+path=( "$HOMEBREW_HOME/opt/imagemagick@6/bin" $path )
+path=( "$HOMEBREW_HOME/opt/bison@2.7)/bin" $path )
 
 [[ -d $HOME/Qt5.5.1/5.5/clang_64/bin ]] && path=( "$HOME/Qt5.5.1/5.5/clang_64/bin" $path )
 
+export HOMEBREW_HOME="/opt/homebrew"
 if [[ -d $HOMEBREW_HOME/opt/openssl/bin ]]; then
   path=( "$HOMEBREW_HOME/opt/openssl/bin" $path )
-  export LDFLAGS=-L$HOMEBREW_HOME/opt/openssl/lib
-  export CPPFLAGS=-I$HOMEBREW_HOME/opt/openssl/include
-  export PKG_CONFIG_PATH=$HOMEBREW_HOME/openssl/lib/pkgconfig
+  export LDFLAGS="-L$HOMEBREW_HOME/opt/openssl/lib"
+  export CPPFLAGS="-I$HOMEBREW_HOME/opt/openssl/include"
+  export PKG_CONFIG_PATH="$HOMEBREW_HOME/openssl/lib/pkgconfig"
 fi
