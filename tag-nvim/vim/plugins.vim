@@ -64,7 +64,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-abolish'
 
 " Fuzzy-finder
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " Trim trailing whitespace on write
 Plug 'derekprior/vim-trimmer'
