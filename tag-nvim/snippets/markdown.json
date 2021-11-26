@@ -1,0 +1,16 @@
+{
+  "Class": {
+    "prefix": ["front"],
+    "body": [
+      "---",
+      "title: ${1:Title}",
+      "category: ${2:category}",
+      "author: Joel",
+      "layout: post",
+      "permalink: /2021/11/26/${3:slug}.html",
+      "alias: /2021/11/26/$3",
+      "---"
+    ],
+    "description": "Markdown front-matter"
+  }
+}

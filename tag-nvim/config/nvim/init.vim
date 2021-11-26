@@ -62,3 +62,14 @@ highlight Comment cterm=italic gui=italic
 
 " config ruby host
 let g:ruby_host_prog = '~/.asdf/installs/ruby/3.0.2/bin/neovim-ruby-host'
+
+" snippet location
+let g:vsnip_snippet_dir = '~/.dotfiles/tag-nvim/snippets'
+
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true
+  },
+}
+EOF

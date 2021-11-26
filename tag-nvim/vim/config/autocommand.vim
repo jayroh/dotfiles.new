@@ -29,7 +29,9 @@ if has('autocmd')
 
     " Markdown-like buffers
     au BufRead,BufNewFile *.md,*.markdown set ft=markdown
+    au BufNewFile,BufRead,BufNewFile,BufWrite *.md syntax match Comment /\%^---\_.\{-}---$/
     au BufRead,BufNewFile *.md,*.markdown setlocal spell
+    au FileType markdown setlocal textwidth=100
     " Ctrl-q will add a markdown "H1" underline
     au BufRead,BufNewFile gitcommit,*.md,*.markdown nnoremap <leader>= yypv$r=
     au BufRead,BufNewFile gitcommit,*.md,*.markdown nnoremap <leader>- yypv$r-

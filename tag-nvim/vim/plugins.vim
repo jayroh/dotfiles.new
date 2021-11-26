@@ -1,8 +1,5 @@
 Plug 'nanotech/jellybeans.vim'
 
-" Linting
-Plug 'w0rp/ale', { 'do': 'yarn add eslint babel-eslint eslint-plugin-react' }
-
 " Language-specific plugins
 
 " Golang
@@ -46,9 +43,6 @@ Plug 'christoomey/vim-system-copy'
 " This plugin provides several pairs of bracket maps.
 " ... for my purposes this also provides a handy way to encode html entities
 Plug 'tpope/vim-unimpaired'
-
-" :Ag is like :grep but with `ag`
-Plug 'rking/ag.vim'
 
 " Easily comment/uncomment lines in many languages
 Plug 'tomtom/tcomment_vim'
@@ -108,8 +102,17 @@ Plug 'sbdchd/neoformat'
 " Line up text nicely (for projects that are used to the convention)
 Plug 'godlygeek/tabular'
 
-" Let's try COC for auto complete and LSP
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" LSP and completion
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+" Snippets
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 
 " Automatically match any brackets, parentheses or quotes when you’re typing
 Plug 'Raimondi/delimitMate'
