@@ -28,13 +28,14 @@ if has('autocmd')
     au BufRead,BufNewFile Thorfile set ft=ruby
 
     " Markdown-like buffers
-    au BufRead,BufNewFile *.md,*.markdown set ft=markdown
-    au BufNewFile,BufRead,BufNewFile,BufWrite *.md syntax match Comment /\%^---\_.\{-}---$/
-    au BufRead,BufNewFile *.md,*.markdown setlocal spell
-    au FileType markdown setlocal textwidth=100
-    " Ctrl-q will add a markdown "H1" underline
-    au BufRead,BufNewFile gitcommit,*.md,*.markdown nnoremap <leader>= yypv$r=
-    au BufRead,BufNewFile gitcommit,*.md,*.markdown nnoremap <leader>- yypv$r-
+    au BufRead,BufNewFile *.md,*.markdown,gitcommit set ft=markdown
+    au FileType *.md,*.markdown,gitcommit setlocal textwidth=100
+    au BufNewFile,BufRead,BufNewFile,BufWrite *.md,*.markdown,gitcommit syntax match Comment /\%^---\_.\{-}---$/
+    au BufRead,BufNewFile *.md,*.markdown,gitcommit setlocal spell
+
+    " Ctrl-q will add a markdown "H1/H2" underline
+    au BufRead,BufNewFile *.md,*.markdown,gitcommit nnoremap <leader>= yypv$r=
+    au BufRead,BufNewFile *.md,*.markdown,gitcommit nnoremap <leader>- yypv$r-
   augroup END
 
   " set any files starting with the bash shebang as `sh` files

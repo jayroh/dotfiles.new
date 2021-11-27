@@ -19,7 +19,7 @@ for config_file (~/.config/zsh/*.zsh) source $config_file
 
 # fuzzy find in history
 fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 | grep -v "clear; echo" || history) | fzf +s --tac | sed 's/^[0-9]*//' | sed 's/^\*//' )
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 | grep -v "clear; echo" || history) | fzf +s --tac | sed 's/^[[:space:]]*[0-9]*[\*\ ]*//g' )
 }
 
 # run this stuff every time I cd into directory
