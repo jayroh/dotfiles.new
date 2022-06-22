@@ -99,6 +99,9 @@ if [ "$machine" != "Linux" ]; then
   open -b com.apple.FontBook ./misc/*.[ot]tf
 fi
 
+# Sync Vale dependencies
+vale sync
+
 echo "Setup complete."
 
 echo ""

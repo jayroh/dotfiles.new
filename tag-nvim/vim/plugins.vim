@@ -30,6 +30,7 @@ Plug 'mvolkmann/vim-js-arrow-function'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim'
 Plug 'reedes/vim-pencil'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " Plumbing to make everything nicer
 " ---------------------------------
@@ -109,6 +110,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
 
 " Snippets
 Plug 'hrsh7th/cmp-vsnip'

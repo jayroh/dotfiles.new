@@ -11,6 +11,8 @@ if has('autocmd')
     au FileType html,ruby,eruby,yaml,vim,javascript,json,scss,liquid,typescript,crystal,css
           \ setlocal autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
+    au BufRead,BufNewFile *.yml,*.yaml,*.yml.j2 set ft=yaml
+
     au BufRead,BufNewFile *.es6,*.js set ft=javascript
     au BufRead,BufNewFile *.sh set ft=sh
     au BufRead,BufNewFile *.html.erb set ft=html.eruby
