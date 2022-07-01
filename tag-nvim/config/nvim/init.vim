@@ -61,7 +61,7 @@ runtime macros/matchit.vim
 highlight Comment cterm=italic gui=italic
 
 " config ruby host
-let g:ruby_host_prog = '~/.asdf/installs/ruby/3.0.2/bin/neovim-ruby-host'
+let g:ruby_host_prog = '/Users/joel/.asdf/shims/neovim-ruby-host'
 
 " snippet location
 let g:vsnip_snippet_dir = '~/.dotfiles/tag-nvim/snippets'
@@ -70,9 +70,22 @@ let g:vsnip_snippet_dir = '~/.dotfiles/tag-nvim/snippets'
 set nofoldenable
 
 lua << EOF
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true
-  },
-}
+  require("nvim-lsp-installer").setup {
+    automatic_installation = true
+  }
+  local lspconfig = require("lspconfig")
+  lspconfig.eslint.setup {}
+  lspconfig.solargraph.setup {}
+
+  require'nvim-treesitter.configs'.setup {
+    highlight = {
+      enable = true
+    },
+  }
+
+  require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
 EOF

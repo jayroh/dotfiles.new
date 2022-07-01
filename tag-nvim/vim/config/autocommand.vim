@@ -6,6 +6,11 @@ if has('autocmd')
     autocmd BufWritePre *.css,*.scss,*.sass :normal migg=G`i
   augroup End
 
+  augroup autoformat
+    " auto-format ruby and javascript/typescript code before saving the file.
+    autocmd BufWritePre *.rb,*.rake,*.js,*.ts lua vim.lsp.buf.formatting_sync(nil, 100)
+  augroup END
+
   augroup myfiletypes
     au FileType gitcommit setlocal spell
     au FileType html,ruby,eruby,yaml,vim,javascript,json,scss,liquid,typescript,crystal,css

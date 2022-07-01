@@ -30,10 +30,12 @@ Plug 'mvolkmann/vim-js-arrow-function'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim'
 Plug 'reedes/vim-pencil'
-Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " Plumbing to make everything nicer
 " ---------------------------------
+
+" ag for vim
+Plug 'rking/ag.vim'
 
 " Sort using text objects and motions
 Plug 'christoomey/vim-sort-motion'
@@ -104,6 +106,7 @@ Plug 'sbdchd/neoformat'
 Plug 'godlygeek/tabular'
 
 " LSP and completion
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
