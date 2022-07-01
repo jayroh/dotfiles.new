@@ -1,5 +1,5 @@
 {
-  "Class": {
+  "front-matter": {
     "prefix": ["front"],
     "body": [
       "---",
@@ -12,5 +12,11 @@
       "---"
     ],
     "description": "Markdown front-matter"
+  },
+  "img tag": {
+    "prefix": "img",
+    "body": [
+      "![${1:alt text}](${2})"
+    ]
   }
 }

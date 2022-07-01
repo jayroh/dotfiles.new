@@ -1,0 +1,30 @@
+{
+  "pry": {
+    "prefix": "pry",
+    "body": [
+      "binding.pry"
+    ]
+  },
+  "fro": {
+    "prefix": "fro",
+    "body": [
+      "# frozen_string_literal: true\n"
+    ]
+  },
+  "class": {
+    "prefix": "class",
+    "body": [
+      "class $1",
+      "  $2",
+      "end"
+    ]
+  },
+  "initialize": {
+    "prefix": "init",
+    "body": [
+      "def initialize($1)",
+      "  $2",
+      "end"
+    ]
+  }
+}
