@@ -1,3 +1,4 @@
+set termguicolors
 set colorcolumn=80                " Highlight the 80 character column
 set relativenumber                " Use relative line numbers
 set number                        " Also show the current line number
@@ -14,7 +15,7 @@ let g:lightline = {
       \ 'component_function': {
       \   'filename': 'LightLineFilename'
       \ },
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'solarized',
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }

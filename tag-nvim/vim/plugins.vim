@@ -1,4 +1,6 @@
+" Color schemes / themes
 Plug 'nanotech/jellybeans.vim'
+Plug 'altercation/vim-colors-solarized'
 
 " Language-specific plugins
 
@@ -133,6 +135,9 @@ Plug 'AndrewRadev/splitjoin.vim'
 
 " Vim and Tmux sitting in a tree ...
 " ----------------------------------
+
+" Set up statusline theme(s)
+Plug 'edkolev/tmuxline.vim'
 
 " To navigate with ctrl+h/j/k/l across tmux and vim windows
 Plug 'christoomey/vim-tmux-navigator'

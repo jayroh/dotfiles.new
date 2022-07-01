@@ -1,5 +1,3 @@
-export TERM=xterm-256color-italic
-
 # start, or attach to, tmux session based on PWD basename
 t() {
   PROJ_NAME=$(basename $PWD | sed 's/\.//g')
