@@ -52,6 +52,8 @@ call s:SourceConfigFilesIn('functions')
 " vim-plug loads all the filetype, syntax and colorscheme files, so turn them on
 " _after_ loading plugins.
 filetype plugin indent on
+set sw=4
+set ts=4
 syntax enable
 set background=light
 silent! colorscheme solarized
@@ -77,6 +79,7 @@ lua << EOF
   local lspconfig = require("lspconfig")
   lspconfig.eslint.setup {}
   lspconfig.solargraph.setup {}
+  lspconfig.html.setup {}
 
   require'nvim-treesitter.configs'.setup {
     highlight = {
