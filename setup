@@ -47,6 +47,9 @@ tic -x ~/.dotfiles/misc/xterm-256color-italic.terminfo
 # Install powerlevel10k
 [ -d ~/.powerlevel10k ] || git clone https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 
+# Install asdf
+[ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+
 # Install vim-plug
 [ -f ~/.local/share/nvim/site/autoload/plug.vim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
