@@ -80,6 +80,7 @@ lua << EOF
   lspconfig.eslint.setup {}
   lspconfig.solargraph.setup {}
   lspconfig.html.setup {}
+  lspconfig.jsonls.setup {}
 
   require'nvim-treesitter.configs'.setup {
     highlight = {
