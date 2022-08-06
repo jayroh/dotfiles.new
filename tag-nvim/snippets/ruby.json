@@ -1,4 +1,10 @@
 {
+  "it{": {
+    "prefix": "it{",
+    "body": [
+      "it { should $1 "
+    ]
+  },
   "pry": {
     "prefix": "pry",
     "body": [

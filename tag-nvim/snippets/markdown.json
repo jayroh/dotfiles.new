@@ -13,6 +13,12 @@
     ],
     "description": "Markdown front-matter"
   },
+  "a tag": {
+    "prefix": "a",
+    "body": [
+      "[${1:link text}](${2:https://})"
+    ]
+  },
   "img tag": {
     "prefix": "img",
     "body": [

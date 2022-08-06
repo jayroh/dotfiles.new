@@ -1,0 +1,46 @@
+{
+  "non-breaking space": {
+    "prefix": "nbsp",
+    "body": [
+      "&nbsp;"
+    ]
+  },
+  "<br>": {
+    "prefix": "br",
+    "body": [
+      "<br>"
+    ]
+  },
+  "<article>": {
+    "prefix": "article",
+    "body": [
+      "<article ${1:class=\"${2}\"}>",
+      "  ${3}",
+      "</article>"
+    ]
+  },
+  "<% _ %>": {
+    "prefix": "%",
+    "body": [
+      "<% ${1} %>"
+    ]
+  },
+  "<%= _ %>": {
+    "prefix": "=",
+    "body": [
+      "<%= ${1} %>"
+    ]
+  },
+  "<%= render _ %>": {
+    "prefix": "render",
+    "body": [
+      "<%= render ${1:partial='${2}'} %>"
+    ]
+  },
+  "<% end %>": {
+    "prefix": "end",
+    "body": [
+      "<% end %>"
+    ]
+  }
+}
