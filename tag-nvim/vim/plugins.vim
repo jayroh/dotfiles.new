@@ -121,6 +121,7 @@ Plug 'folke/trouble.nvim'
 " Snippets
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 
 " Automatically match any brackets, parentheses or quotes when you’re typing
 Plug 'Raimondi/delimitMate'
