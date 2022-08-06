@@ -4,8 +4,10 @@ else
   export HOMEBREW_HOME="/usr/local"
 fi
 
-[[ -d /usr/lib/jvm/java-8-openjdk-amd64 ]] &&  export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-[[ -x /usr/libexec/java_home ]]            &&  export JAVA_HOME=$(/usr/libexec/java_home)
+[[ -d /usr/lib/jvm/java-8-openjdk-amd64 ]] && export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+[[ -x /usr/libexec/java_home ]]            && export JAVA_HOME=$(/usr/libexec/java_home)
+[[ -d "$HOME/.yarn/bin" ]]                 && export PATH="$HOME/.yarn/bin:$PATH"
+[[ -d "$HOME/.nvm" ]]                      && export NVM_DIR="$HOME/.nvm"
 
 path=( "/usr/bin" "/bin" "/usr/sbin" "/sbin" )
 path=( "$HOME/.npm-packages/bin" "node_modules/.bin" "$HOME/.bin" "$HOME/.rbenv/bin" "/usr/local/bin" $path )

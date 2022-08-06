@@ -1,15 +1,14 @@
-if [ "$(uname -m 2> /dev/null)" = "arm64" ]; then
-  export HOMEBREW_HOME="/opt/homebrew/opt"
-else
-  export HOMEBREW_HOME="/usr/local/opt"
-fi
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # source private zshrc file not kept in source control
 [[ -f ~/.zshrc_private ]] && source ~/.zshrc_private
@@ -22,23 +21,11 @@ fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 | grep -v "clear; echo" || history) | fzf +s --tac | sed 's/^[[:space:]]*[0-9]*[\*\ ]*//g' )
 }
 
-# run this stuff every time I cd into directory
+[ -s "$HOME/.asdf/asdf.sh" ]                          && . "$HOME/.asdf/asdf.sh"
+[ -s "$HOMEBREW_HOME/nvm/nvm.sh" ]                    && . "$HOMEBREW_HOME/nvm/nvm.sh"
+[ -s "$HOMEBREW_HOME/nvm/etc/bash_completion.d/nvm" ] && . "$HOMEBREW_HOME/nvm/etc/bash_completion.d/nvm"
 
+# run this stuff every time I cd into directory
 function chpwd() {
   [[ -f .heroku ]] && heroku accounts:set `cat .heroku`
 }
-
-[[ -d "$HOME/.yarn/bin" ]] && export PATH="$HOME/.yarn/bin:$PATH"
-
-. $HOME/.asdf/asdf.sh
-
-if [[ -d "$HOME/.nvm" ]]; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$HOMEBREW_HOME/nvm/nvm.sh" ] && . "$HOMEBREW_HOME/nvm/nvm.sh"
-  [ -s "$HOMEBREW_HOME/nvm/etc/bash_completion.d/nvm" ] && . "$HOMEBREW_HOME/nvm/etc/bash_completion.d/nvm"
-fi
-
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
