@@ -88,6 +88,30 @@ lua << EOF
     },
   }
 
+  require'treesitter-context'.setup {
+    -- Configuration info: https://github.com/nvim-treesitter/nvim-treesitter-context#configuration
+
+    enable = true,
+    max_lines = 0,
+    trim_scope = 'outer',
+    patterns = {
+      ruby = {
+        'def',
+        'describe',
+        'context',
+        'scenario',
+        'factory',
+        'before',
+        'it',
+        'module'
+      },
+    },
+
+    zindex = 20,
+    mode = 'cursor',
+    separator = nil
+  }
+
   require("trouble").setup {
     -- your configuration comes here
     -- or leave it empty to use the default settings
