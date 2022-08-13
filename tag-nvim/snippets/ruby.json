@@ -32,5 +32,80 @@
       "  $2",
       "end"
     ]
+  },
+  "memoize method": {
+    "prefix": "memo",
+    "body": [
+      "def $1",
+      "  @_${1} ||= $0",
+      "end"
+    ]
+  },
+  "attr_reader": {
+    "prefix": "ar",
+    "body": [
+      "attr_reader :$0"
+    ]
+  },
+  "attr_writer": {
+    "prefix": "aw",
+    "body": [
+      "attr_writer :$0"
+    ]
+  },
+  "attr_accessible": {
+    "prefix": "aa",
+    "body": [
+      "attr_accessible :$0"
+    ]
+  },
+  "rails_helper": {
+    "prefix": "rhelp",
+    "body": [
+      "require 'rails_helper'",
+      ""
+    ]
+  },
+  "RSpec describe": {
+    "prefix": "rdesc",
+    "body": [
+      "RSpec.describe '$1' do",
+      "  $2",
+      "end"
+    ]
+  },
+  "RSpec context": {
+    "prefix": "rcont",
+    "body": [
+      "context '$1' do",
+      "  $2",
+      "end"
+    ]
+  },
+  "RSpec scenario": {
+    "prefix": "rscen",
+    "body": [
+      "scenario '$1' do",
+      "  $2",
+      "end"
+    ]
+  },
+  "FeatureObject::": {
+    "prefix": "rfea",
+    "body": [
+      "FeatureObject::$1.new"
+    ]
+  },
+  "expect to": {
+    "prefix": "expectto",
+    "body": [
+      "expect($1).to $2"
+    ]
+  },
+  "expect not to": {
+    "prefix": "expectnot",
+    "body": [
+      "expect($1).not_to $2"
+    ]
   }
 }
