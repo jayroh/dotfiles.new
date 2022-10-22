@@ -1,4 +1,39 @@
 {
+  "new rails controller": {
+    "prefix": "cont",
+    "body": [
+      "class $1Controller < ApplicationController",
+      "  def index",
+      "  end",
+      "",
+      "  def new",
+      "  end",
+      "",
+      "  def create",
+      "  end",
+      "",
+      "  def show",
+      "  end",
+      "",
+      "  def edit",
+      "  end",
+      "",
+      "  def update",
+      "  end",
+      "",
+      "  def destroy",
+      "  end",
+      "end"
+    ]
+  },
+  "module": {
+    "prefix": "mod",
+    "body": [
+      "module $1",
+      "  $0",
+      "end"
+    ]
+  },
   "it{": {
     "prefix": "it{",
     "body": [
@@ -17,11 +52,11 @@
       "# frozen_string_literal: true\n"
     ]
   },
-  "class": {
+  "cla": {
     "prefix": "class",
     "body": [
       "class $1",
-      "  $2",
+      "  $0",
       "end"
     ]
   },
@@ -91,9 +126,23 @@
     ]
   },
   "FeatureObject::": {
+    "prefix": "fea",
+    "body": [
+      "FeatureObject::$0"
+    ]
+  },
+  "New FeatureObject class": {
     "prefix": "rfea",
     "body": [
-      "FeatureObject::$1.new"
+      "# frozen_string_literal: true",
+      "",
+      "module FeatureObject",
+      "  class $1 < FeatureObject::Base",
+      "    def $2",
+      "      $0",
+      "    end",
+      "  end",
+      "end"
     ]
   },
   "expect to": {

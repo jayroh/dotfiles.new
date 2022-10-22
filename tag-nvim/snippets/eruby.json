@@ -1,4 +1,10 @@
 {
+  "link_to": {
+    "prefix": "link",
+    "body": [
+      "<%= link_to \"${1:Text}\", ${2}_path($0) %>"
+    ]
+  },
   "non-breaking space": {
     "prefix": "nbsp",
     "body": [

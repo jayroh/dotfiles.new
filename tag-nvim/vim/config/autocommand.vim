@@ -26,7 +26,7 @@ if has('autocmd')
     au FileType gitcommit setlocal spell
     au FileType html,ruby,eruby,yaml,vim,javascript,json,scss,liquid,typescript,crystal,css setlocal autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
     au FileType html.eruby setlocal autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-    au BufWritePre *.rb,*.rake,*.js,*.ts lua vim.lsp.buf.formatting_sync(nil, 100)
+    au BufWritePre *.rb,*.rake,*.js,*.ts lua vim.lsp.buf.formatting_sync(nil, 2000)
 
     " Markdown-like buffers
     au BufRead,BufNewFile *.md,*.markdown,gitcommit set ft=markdown

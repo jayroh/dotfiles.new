@@ -1,11 +1,11 @@
 " Color schemes / themes
-Plug 'nanotech/jellybeans.vim'
+" Plug 'nanotech/jellybeans.vim'
 Plug 'altercation/vim-colors-solarized'
 
 " Language-specific plugins
 
 " Golang
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 
 " Ansible
 Plug 'chase/vim-ansible-yaml'
@@ -20,13 +20,13 @@ Plug 'ecomba/vim-ruby-refactoring'    " some ruby refactoring goodness
 Plug 'editorconfig/editorconfig-vim'
 
 " JavaScript, ES6, Typescript, Vue, React
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'isRuslan/vim-es6'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'posva/vim-vue'
-Plug 'mvolkmann/vim-js-arrow-function'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'isRuslan/vim-es6'
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'posva/vim-vue'
+" Plug 'mvolkmann/vim-js-arrow-function'
 
 " Markdown
 Plug 'plasticboy/vim-markdown'
@@ -35,7 +35,6 @@ Plug 'reedes/vim-pencil'
 
 " Plumbing to make everything nicer
 " ---------------------------------
-
 " ag for vim
 Plug 'rking/ag.vim'
 
@@ -50,7 +49,8 @@ Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-unimpaired'
 
 " Easily comment/uncomment lines in many languages
-Plug 'tomtom/tcomment_vim'
+" Plug 'tomtom/tcomment_vim'
+Plug 'terrortylor/nvim-comment'
 
 " Git bindings
 Plug 'tpope/vim-fugitive'
@@ -60,7 +60,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'pwntester/octo.nvim'
 
 " Auto-add `end` in Ruby, `endfunction` in Vim, etc
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
+Plug 'RRethy/nvim-treesitter-endwise'
 
 " Easily search for, substitute, and abbreviate multiple variants of a word.
 " Also coerce variable names to other styles (snake case, camel case, etc)
@@ -93,7 +94,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
 " Intelligently reopen files where you left off
-Plug 'dietsche/vim-lastplace'
+" Plug 'dietsche/vim-lastplace'
+
+" For quick motion and moving around your buffer(s)
+Plug 'ggandor/leap.nvim'
 
 " Buffer management made easy(-ier)
 Plug 'troydm/easybuffer.vim'

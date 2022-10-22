@@ -29,3 +29,6 @@ fh() {
 function chpwd() {
   [[ -f .heroku ]] && heroku accounts:set `cat .heroku`
 }
+
+# vim mode in zsh
+bindkey -v

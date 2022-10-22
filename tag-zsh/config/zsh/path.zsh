@@ -15,7 +15,7 @@ path=( "$HOME/.npm-packages/bin" "node_modules/.bin" "$HOME/.bin" "$HOME/.rbenv/
 path=( "$HOME/.local/bin" $path )
 path=( "$JAVA_HOME/jre/bin" $path )
 path=( "/Applications/Postgres.app/Contents/Versions/latest/bin" $path )
-path=( "$HOMEBREW_HOME/bin" $path )
+path=( "$HOMEBREW_HOME/bin" "$HOMEBREW_HOME/sbin" $path )
 path=( "$HOMEBREW_HOME/opt/imagemagick@6/bin" $path )
 path=( "$HOMEBREW_HOME/opt/bison@2.7)/bin" $path )
 
