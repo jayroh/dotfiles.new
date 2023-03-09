@@ -8,12 +8,14 @@ machine=`uname -s`
 
 if [ "$machine" == "Linux" ]; then
   ZSH_LOCATION="/usr/bin/zsh"
-  sudo add-apt-repository -y ppa:martin-frost/thoughtbot-rcm
+
+  sudo wget -q https://apt.thoughtbot.com/thoughtbot.gpg.key -O /etc/apt/trusted.gpg.d/thoughtbot.gpg
+  echo "deb https://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
   sudo apt-get update
+  sudo apt-get install rcm
 
   # install dependencies
   < Aptfile xargs sudo apt-get install -y
-  < Snapfile xargs sudo snap install
   < Snapfile.classic xargs sudo snap install --classic
 
   # install pips
@@ -88,10 +90,7 @@ if [ ! -e ~/.config/nvim/autoload/plug.vim ]; then
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-rcup -x setup -t ruby -t bash -t node -t ansible -t git -t nvim -t rbenv -t rspec -t tmux -t zsh
-
-[ -d $(rbenv root)/plugins/rbenv-default-gems ] || git clone https://github.com/rbenv/rbenv-default-gems.git \
-  $(rbenv root)/plugins/rbenv-default-gems
+rcup -x setup -t ruby -t bash -t node -t ansible -t git -t nvim -t rspec -t tmux -t zsh
 
 if [ "$machine" != "Linux" ]; then
   # Install command line tools if you haven't already
@@ -108,7 +107,6 @@ echo ""
 echo "Run the following to get vim situated:"
 echo ""
 echo "$ nvim +'PlugInstall --sync' +qa"
-echo "$ nvim -c 'CocInstall -sync coc-css coc-html coc-json coc-snippets coc-solargraph coc-tailwindcss coc-tsserver|q'"
 echo ""
 echo "And set iTerm's font to 'MesloLGS NF'"
 echo ""
