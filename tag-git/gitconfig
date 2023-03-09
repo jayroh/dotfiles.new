@@ -2,12 +2,12 @@
 # https://github.com/gabebw/dotfiles/blob/master/tag-git/gitconfig
 
 [user]
-	email = joel.oliveira@gmail.com
-	name = Joel Oliveira
+  email = joel.oliveira@gmail.com
+  name = Joel Oliveira
 [github]
   user = jayroh
 [core]
-  editor = vim
+  editor = nvim
   whitespace = trailing-space,cr-at-eol
   excludesfile = ~/.gitignore
   autocrlf = false
