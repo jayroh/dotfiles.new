@@ -3,7 +3,7 @@
 ```sh
 xcode-select --install
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 git clone https://github.com/jayroh/dotfiles.new.git ~/.dotfiles && \
   cd ~/.dotfiles && \

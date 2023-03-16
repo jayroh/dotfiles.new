@@ -6,5 +6,9 @@ if [[ ! -S ~/.ssh/ssh_auth_sock ]]; then
   eval `ssh-agent`
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
+
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l | grep "The agent has no identities" && ssh-add
+
+if ssh-add -l | grep -q "The agent has no identities"; then
+  ssh-add
+fi
