@@ -12,7 +12,6 @@ git clone https://github.com/jayroh/dotfiles.new.git ~/.dotfiles && \
 
 The above _will_ install the following via Homebrew cask or the Apple app store:
 
-* 1Password7: https://support.1password.com/explore/whats-new-mac/
 * Alfred: https://www.alfredapp.com/
 * Bartender: https://www.macbartender.com/
 * Google Play Music: https://www.googleplaymusicdesktopplayer.com/
