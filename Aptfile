@@ -7,10 +7,10 @@ docker-compose
 fd-find
 ffmpeg
 fzf
+gh
 git
 gpg
 graphviz
-hub
 jq
 libcurl4-openssl-dev
 libgmp-dev
