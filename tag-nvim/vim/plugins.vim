@@ -35,6 +35,9 @@ Plug 'reedes/vim-pencil'
 
 " Plumbing to make everything nicer
 " ---------------------------------
+" github co-pilot
+Plug 'github/copilot.vim'
+
 " ag for vim
 Plug 'rking/ag.vim'
 

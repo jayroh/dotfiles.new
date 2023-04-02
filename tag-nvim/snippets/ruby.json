@@ -1,4 +1,12 @@
 {
+  "disable": {
+    "prefix": "disable",
+    "body": [
+      "# rubocop:disable $1",
+      "${0:$TM_SELECTED_TEXT}",
+      "# rubocop:enable $1"
+    ]
+  },
   "new rails controller": {
     "prefix": "cont",
     "body": [
@@ -30,7 +38,7 @@
     "prefix": "mod",
     "body": [
       "module $1",
-      "  $0",
+      "  ${0:$TM_SELECTED_TEXT}",
       "end"
     ]
   },

@@ -1,6 +1,7 @@
 # start, or attach to, tmux session based on PWD basename
 t() {
   PROJ_NAME=$(basename $PWD | sed 's/\.//g')
+  export TERM=tmux-256color
 
   tmux has-session -t $PROJ_NAME 2>/dev/null
 

@@ -69,6 +69,9 @@ let g:ruby_host_prog = '/Users/joel/.asdf/shims/neovim-ruby-host'
 " snippet location
 let g:vsnip_snippet_dir = '~/.dotfiles/tag-nvim/snippets'
 
+" ignore perl
+let g:loaded_perl_provider = 0
+
 " disable automatic folding
 set nofoldenable
 
@@ -118,7 +121,12 @@ lua << EOF
     buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
   end
 
+  -- Setup lspconfig.
+  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+
   local lspconfig = require("lspconfig")
+
   lspconfig.eslint.setup {
     on_attach = on_attach,
   }
@@ -132,14 +140,17 @@ lua << EOF
     useBundler = true,
   }
   lspconfig.html.setup {
+    capabilities = capabilities,
     on_attach = on_attach,
+    filetypes = { "html", "eruby" },
   }
   lspconfig.jsonls.setup {
     on_attach = on_attach,
   }
-
-  -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+  lspconfig.tailwindcss.setup {
+    on_attach = on_attach,
+    filetypes = { "html", "css", "eruby" },
+  }
 
   require'nvim-treesitter.configs'.setup {
     highlight = {
