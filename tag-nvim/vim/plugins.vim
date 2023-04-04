@@ -24,7 +24,6 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug 'mxw/vim-jsx'
 " Plug 'isRuslan/vim-es6'
 " Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Plug 'posva/vim-vue'
 " Plug 'mvolkmann/vim-js-arrow-function'
 
@@ -110,6 +109,9 @@ Plug 'benekastah/neomake' " run yarn install
 
 " Autoformat code!
 Plug 'sbdchd/neoformat'
+
+" Sort tailwind classes on save
+Plug 'laytan/tailwind-sorter.nvim', { 'do': 'cd formatter && npm i && npm run build' }
 
 " Line up text nicely (for projects that are used to the convention)
 Plug 'godlygeek/tabular'

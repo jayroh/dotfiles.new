@@ -78,12 +78,6 @@ set nofoldenable
 lua << EOF
   require('nvim_comment').setup()
 
-  require('nvim-treesitter.configs').setup {
-    endwise = {
-      enable = true,
-      },
-    }
-
   require('nvim-lsp-installer').setup {
     automatic_installation = true
   }
@@ -153,8 +147,40 @@ lua << EOF
   }
 
   require'nvim-treesitter.configs'.setup {
-    highlight = {
-      enable = true
+    autotag   = { enable = true },
+    endwise   = { enable = true },
+    highlight = { enable = true },
+    indent    = { enable = true },
+    rainbow   = { enable = true },
+    sync_install = true,
+    auto_install = true,
+    ensured_installed = {
+      "bash",
+      "c",
+      "comment",
+      "css",
+      "dockerfile",
+      "embedded_template",
+      "erb",
+      "gitcommit",
+      "gitignore",
+      "go",
+      "html",
+      "javascript",
+      "jsdoc",
+      "jsonc",
+      "lua",
+      "luadoc",
+      "luap",
+      "markdown",
+      "markdown_inline",
+      "ruby",
+      "scss",
+      "sql",
+      "toml",
+      "typescript",
+      "vim",
+      "yaml",
     },
   }
 
@@ -165,4 +191,10 @@ lua << EOF
   }
 
   require('leap').add_default_mappings()
+
+  require('tailwind-sorter').setup({
+    on_save_enabled = true, -- If `true`, automatically enables on save sorting.
+    on_save_pattern = { '*.html', '*.html.erb', '*.js', '*.jsx', '*.tsx', '*.php' }, -- The file patterns to watch and sort.
+    node_path = 'node',
+  })
 EOF
