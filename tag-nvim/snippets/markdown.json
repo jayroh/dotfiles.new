@@ -1,4 +1,29 @@
 {
+  "photo-with-caption": {
+    "prefix": ["photo-with"],
+    "body": [
+      "<figure class=\"photo-with-caption\">",
+      "  <picture>",
+      "    <!--[if IE 9]><video style=\"display: none;\"><![endif]-->",
+      "    <source srcset=\"{% imgproxy_url path: \"/images/photos/${1:filename}.jpg\", resizing_type: 'fill', width: 1344, format: 'avif' %}\" type=\"image/avif\" media=\"(min-width: 413px)\" />",
+      "    <source srcset=\"{% imgproxy_url path: \"/images/photos/$1.jpg\", resizing_type: 'fill', width: 1344, format: 'webp' %}\" type=\"image/webp\" media=\"(min-width: 413px)\" />",
+      "    <source srcset=\"{% imgproxy_url path: \"/images/photos/$1.jpg\", resizing_type: 'fill', width: 738, format: 'avif' %}\" type=\"image/avif\" media=\"(max-width: 413px)\" />",
+      "    <source srcset=\"{% imgproxy_url path: \"/images/photos/$1.jpg\", resizing_type: 'fill', width: 738, format: 'webp' %}\" type=\"image/webp\" media=\"(max-width: 413px)\" />",
+      "    <!--[if IE 9]></video><![endif]-->",
+      "    <img src=\"{% imgproxy_url path: \"/images/photos/$1.jpg\", resizing_type: 'fill', width: 738 %}\"",
+      "      decoding=\"async\"",
+      "      alt=\"${2:Alt tag contents}\"",
+      "      width=\"369\"",
+      "      height=\"656\" />",
+      "  </picture>",
+      "",
+      "  <figcaption>",
+      "    ${3:Caption for the photo}",
+      "  </figcaption>",
+      "</figure>"
+    ],
+    "description": "Figure, picture, and caption"
+  },
   "front-matter": {
     "prefix": ["front"],
     "body": [
