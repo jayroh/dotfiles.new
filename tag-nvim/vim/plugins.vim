@@ -118,6 +118,9 @@ Plug 'laytan/tailwind-sorter.nvim', { 'do': 'cd formatter && npm i && npm run bu
 " Line up text nicely (for projects that are used to the convention)
 Plug 'godlygeek/tabular'
 
+" Ctag management
+Plug 'ludovicchabant/vim-gutentags'
+
 " LSP and completion
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
