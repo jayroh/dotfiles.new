@@ -1,6 +1,7 @@
 " Color schemes / themes
 " Plug 'nanotech/jellybeans.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Language-specific plugins
 
@@ -91,6 +92,7 @@ Plug 'tpope/vim-eunuch'
 
 " Surround selected text intelligently
 Plug 'tpope/vim-surround'
+Plug 'sustech-data/wildfire.nvim'
 
 " Make `.` work to repeat plugin actions too
 Plug 'tpope/vim-repeat'

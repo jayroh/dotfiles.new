@@ -15,7 +15,7 @@ let g:lightline = {
       \ 'component_function': {
       \   'filename': 'LightLineFilename'
       \ },
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'dracula',
       \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }

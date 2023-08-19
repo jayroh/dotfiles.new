@@ -55,8 +55,8 @@ filetype plugin indent on
 set sw=4
 set ts=4
 syntax enable
-set background=light
-silent! colorscheme solarized
+set background=dark
+silent! colorscheme dracula
 
 " vim-textobj-rubyblock requires that the matchit.vim plugin is enabled.
 runtime macros/matchit.vim
@@ -76,6 +76,8 @@ let g:loaded_perl_provider = 0
 set nofoldenable
 
 lua << EOF
+  require("wildfire").setup()
+
   require('nvim_comment').setup()
 
   require('nvim-lsp-installer').setup {
