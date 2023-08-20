@@ -76,6 +76,8 @@ let g:loaded_perl_provider = 0
 set nofoldenable
 
 lua << EOF
+  require('neoscroll').setup()
+
   require("wildfire").setup()
 
   require('nvim_comment').setup()

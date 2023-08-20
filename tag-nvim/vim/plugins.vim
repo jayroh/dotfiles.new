@@ -121,6 +121,9 @@ Plug 'godlygeek/tabular'
 " Ctag management
 Plug 'ludovicchabant/vim-gutentags'
 
+" Smooth scrolling
+Plug 'karb94/neoscroll.nvim'
+
 " LSP and completion
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
