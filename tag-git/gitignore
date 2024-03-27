@@ -1,3 +1,4 @@
+.env
 .DS_Store
 .graphqlconfig
 .heroku
@@ -16,3 +17,4 @@ scratch
 tags
 tmux-client*.log
 tmux-server*.log
+tag-zsh/config/zsh/work.zsh
