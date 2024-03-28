@@ -10,5 +10,5 @@ fi
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 if ssh-add -l | grep -q "The agent has no identities"; then
-  ssh-add -q
+  ssh-add -q &>/dev/null
 fi
