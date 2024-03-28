@@ -10,6 +10,8 @@
   "new rails controller": {
     "prefix": "cont",
     "body": [
+      "# frozen_string_literal: true",
+      "",
       "class $1Controller < ApplicationController",
       "  def index",
       "  end",
@@ -107,6 +109,22 @@
     "body": [
       "require 'rails_helper'",
       ""
+    ]
+  },
+  "RSpec system test": {
+    "prefix": "rsys",
+    "body": [
+      "# frozen_string_literal: true",
+      "",
+      "require 'rails_helper'",
+      "",
+      "RSpec.describe '$1' do",
+      "  context '$2' do",
+      "    scenario '$3' do",
+      "      $4",
+      "    end",
+      "  end",
+      "end"
     ]
   },
   "RSpec describe": {

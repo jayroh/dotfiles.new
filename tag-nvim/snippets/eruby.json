@@ -1,4 +1,12 @@
 {
+  "div": {
+    "prefix": "div",
+    "body": [
+      "<div id=\"$1\" class=\"$2\">",
+      "  $0",
+      "</div>"
+    ]
+  },
   "link_to": {
     "prefix": "link",
     "body": [
