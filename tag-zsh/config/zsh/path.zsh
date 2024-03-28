@@ -9,6 +9,9 @@ path=( "$HOME/.local/bin" $path )
 path=( "$JAVA_HOME/jre/bin" $path )
 [[ -d $HOME/Qt5.5.1/5.5/clang_64/bin ]] && path=( "$HOME/Qt5.5.1/5.5/clang_64/bin" $path )
 
+PG_APP_BIN="/Applications/Postgres.app/Contents/Versions/latest/bin"
+[[ -d $PG_APP_BIN ]] && path=( $PG_APP_BIN $path )
+
 if [ "$(uname -m 2> /dev/null)" = "arm64" ]; then
   export HOMEBREW_HOME="/opt/homebrew"
 else
