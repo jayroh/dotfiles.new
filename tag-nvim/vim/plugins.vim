@@ -124,6 +124,9 @@ Plug 'ludovicchabant/vim-gutentags'
 " Smooth scrolling
 Plug 'karb94/neoscroll.nvim'
 
+" Highlight all instances of word cursor is on, in current buffer
+Plug 'RRethy/vim-illuminate'
+
 " LSP and completion
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
