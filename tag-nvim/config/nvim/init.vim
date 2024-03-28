@@ -150,6 +150,11 @@ lua << EOF
     filetypes = { "html", "css", "eruby" },
   }
 
+  require'lspconfig'.tsserver.setup{
+    on_attach = on_attach,
+    filetypes = { "typescript" },
+  }
+
   require'nvim-treesitter.configs'.setup {
     autotag   = { enable = true },
     endwise   = { enable = true },
