@@ -18,7 +18,7 @@ for config_file (~/.config/zsh/*.zsh) source $config_file
 
 # fuzzy find in history
 fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 | grep -v "clear; echo" || history) | fzf +s --tac | sed 's/^[[:space:]]*[0-9]*[\*\ ]*//g' )
+  echo "use CTRL-r instead. It's built into fzf"
 }
 
 [ -s "$HOME/.asdf/asdf.sh" ]                          && . "$HOME/.asdf/asdf.sh"
