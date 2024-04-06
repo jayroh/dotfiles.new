@@ -96,8 +96,5 @@ mkcd() {
   cd $1
 }
 
-
 # vim mode in zsh
 bindkey -v
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
