@@ -12,7 +12,7 @@ if [ -x "$(command -v brew)" ]; then
 fi
 
 # ruby
-alias be='bundle exec'
+alias be='echo "No need for bundle exec. Use binstubs."'
 
 # rails
 alias migrate='bundle exec rake db:migrate; bundle exec rake db:migrate RAILS_ENV=test'
