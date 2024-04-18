@@ -128,7 +128,8 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'RRethy/vim-illuminate'
 
 " LSP and completion
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'

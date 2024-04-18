@@ -22,7 +22,7 @@ endfunction
 " <Leader> must be set before `s:SourceConfigFilesIn` below
 " because leader is used at the moment mappings are defined.
 " Changing mapleader after a mapping is defined has no effect on the mapping.
-let mapleader=","
+let mapleader= ','
 
 " Map 'ctrl-s' to save buffer
 " for normal mode ...
@@ -78,12 +78,30 @@ set nofoldenable
 lua << EOF
   require('neoscroll').setup()
 
-  require("wildfire").setup()
+  require('wildfire').setup()
 
   require('nvim_comment').setup()
 
-  require('nvim-lsp-installer').setup {
-    automatic_installation = true
+  require('mason').setup {
+      ui = {
+          icons = {
+              package_installed = '✓'
+          }
+      }
+  }
+
+  require('mason-lspconfig').setup {
+    ensure_installed = {
+     'ansiblels',
+     'eslint',
+     'html',
+     'jsonls',
+     'lua_ls',
+     'rubocop',
+     'solargraph' ,
+     'tailwindcss',
+     'tsserver',
+    },
   }
 
   -- Use an on_attach function to only map the following keys
