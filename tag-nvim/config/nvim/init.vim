@@ -64,7 +64,7 @@ runtime macros/matchit.vim
 highlight Comment cterm=italic gui=italic
 
 " config ruby host
-let g:ruby_host_prog = '/Users/joel/.asdf/shims/neovim-ruby-host'
+let g:ruby_host_prog = '~/.asdf/shims/neovim-ruby-host'
 
 " snippet location
 let g:vsnip_snippet_dir = '~/.dotfiles/tag-nvim/snippets'

@@ -13,5 +13,7 @@ vim.g.copilot_filetypes = {
   ruby = true,
   javascript = true,
   typescript = true,
+  yaml = true,
+  vim = true,
 }
 EOF
