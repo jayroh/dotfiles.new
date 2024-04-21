@@ -51,6 +51,12 @@ tic -x ~/.dotfiles/misc/xterm-256color-italic.terminfo
 
 # Install asdf
 [ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+echo "Installing all needed asdf plugins ..."
+asdf plugin add golang
+asdf plugin add nodejs
+asdf plugin add python
+asdf plugin add ruby
+echo "⚠️  Now install all languages with 'asdf install'..."
 
 # Install vim-plug
 [ -f ~/.local/share/nvim/site/autoload/plug.vim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \

@@ -188,7 +188,6 @@ lua << EOF
       "css",
       "dockerfile",
       "embedded_template",
-      "erb",
       "gitcommit",
       "gitignore",
       "go",
