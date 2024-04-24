@@ -1,10 +1,16 @@
 # Setup fzf
 # ---------
 
-# Auto-completion
-# ---------------
-source "/opt/homebrew/opt/fzf/shell/completion.zsh"
+machine=`uname -s`
 
-# Key bindings
-# ------------
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+if [ "$machine" == "Linux" ]; then
+  FZF_BASE="/usr/share/doc/fzf/examples"
+else
+  FZF_BASE="/opt/homebrew/opt/fzf/shell"
+fi
+
+
+# Auto-completion and key bindings
+# ---------------
+source "$FZF_BASE/completion.zsh"
+source "$FZF_BASE/key-bindings.zsh"
