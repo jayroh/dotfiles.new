@@ -1,24 +1,12 @@
 #!/bin/bash
 
-# Use homebrew to install packages found in both `./Brewfile` and `~/.Brewfile`
-# A bit redundant since they eventually point to the same file but it's a good
-# way to work in case one doesn't exist
-
 machine=`uname -s`
 
 if [ "$machine" == "Linux" ]; then
-  ZSH_LOCATION="/usr/bin/zsh"
-
   # install dependencies
   < Aptfile xargs sudo apt-get install -y
   < Snapfile.classic xargs sudo snap install --classic
-
-  # install pips
-  curl -o /tmp/get-pip.py https://bootstrap.pypa.io/get-pip.py
-  sudo python2 /tmp/get-pip.py
-  sudo python3 /tmp/get-pip.py
-  python2 -m pip install --user --upgrade pip
-  python3 -m pip install --user --upgrade pip
+  ZSH_LOCATION=`which zsh`
 else
   if [ "$(uname -m 2> /dev/null)" == "arm64" ]; then
     ZSH_LOCATION="/opt/homebrew/bin/zsh"
@@ -26,16 +14,15 @@ else
     ZSH_LOCATION="/usr/local/bin/zsh"
   fi
 
+  # Use homebrew to install packages found in both `./Brewfile` and `~/.Brewfile`
+  # A bit redundant since they eventually point to the same file but it's a good
+  # way to work in case one doesn't exist
   brew bundle
   brew bundle --file=~/.Brewfile
 fi
 
-if ! grep -Fxq $ZSH_LOCATION /etc/shells
-then
-  echo $ZSH_LOCATION | sudo tee -a /etc/shells
-fi
-
-chsh -s `which zsh`
+echo "Changing shell ..."
+chsh -s $ZSH_LOCATION
 
 # Install terminfos
 tic -x ~/.dotfiles/misc/tmux.terminfo
@@ -46,6 +33,8 @@ tic -x ~/.dotfiles/misc/xterm-256color-italic.terminfo
 
 # Install asdf
 [ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+[ $SHELL == "/bin/bash" ] && source ~/.bashrc
+[ $SHELL == "$ZSH_LOCATION" ] && source ~/.zshrc
 echo "Installing all needed asdf plugins ..."
 asdf plugin add golang
 asdf plugin add nodejs
@@ -57,23 +46,7 @@ echo "⚠️  Now install all languages with 'asdf install'..."
 [ -f ~/.local/share/nvim/site/autoload/plug.vim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-if [ ! -e ~/.bin/vim ]; then
-  echo "Creating symlink from ~/.bin/vim to NeoVim bin."
-  ln -s `which nvim` ~/.bin/vim
-fi
-
-# Test if the neovim pip2 module is installed
-python2 -c "import neovim" >& /dev/null
-
-# If not, install it
-if [ "${?}" == "1" ]; then
-  # If this doesn't work, see:
-  # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
-  echo "Installing NeoVim pip2 module."
-  command -v pip2 && pip2 install neovim pynvim
-fi
-
-# Test if the neovim pip2 module is installed
+# Test if the neovim pip3 module is installed
 python3 -c "import neovim" >& /dev/null
 
 # If not, install it
