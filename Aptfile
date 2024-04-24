@@ -2,8 +2,8 @@ ansible
 autojump
 awscli
 exuberant-ctags
-docker
-docker-compose
+direnv
+docker-buildx
 fd-find
 ffmpeg
 fzf
@@ -29,6 +29,9 @@ openssl
 pgcli
 python3-psycopg2
 python3-testresources
+python3-pip
+python3-neovim
+python3-pynvim
 rcm
 redis
 ripgrep
