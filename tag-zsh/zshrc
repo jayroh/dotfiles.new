@@ -29,3 +29,5 @@ path=(
 
 # vim mode in zsh
 bindkey -v
+
+eval "$(direnv hook zsh)"
