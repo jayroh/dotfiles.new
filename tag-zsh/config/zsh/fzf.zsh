@@ -2,13 +2,8 @@
 # ---------
 
 machine=`uname -s`
-
-if [ "$machine" == "Linux" ]; then
-  FZF_BASE="/usr/share/doc/fzf/examples"
-else
-  FZF_BASE="/opt/homebrew/opt/fzf/shell"
-fi
-
+[ "$machine" = "Linux" ]  && FZF_BASE="/usr/share/doc/fzf/examples"
+[ "$machine" = "Darwin" ] && FZF_BASE="/opt/homebrew/opt/fzf/shell"
 
 # Auto-completion and key bindings
 # ---------------
