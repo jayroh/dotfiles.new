@@ -9,11 +9,6 @@ machine=`uname -s`
 if [ "$machine" == "Linux" ]; then
   ZSH_LOCATION="/usr/bin/zsh"
 
-  sudo wget -q https://apt.thoughtbot.com/thoughtbot.gpg.key -O /etc/apt/trusted.gpg.d/thoughtbot.gpg
-  echo "deb https://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list
-  sudo apt-get update
-  sudo apt-get install rcm
-
   # install dependencies
   < Aptfile xargs sudo apt-get install -y
   < Snapfile.classic xargs sudo snap install --classic
