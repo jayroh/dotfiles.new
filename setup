@@ -1,12 +1,13 @@
 #!/bin/bash
 
-machine=`uname -s`
-
-if [ "$machine" == "Linux" ]; then
+# LINUX ***********************************************************************
+if [ `uname -s` == "Linux" ]; then
   # install dependencies
   < Aptfile xargs sudo apt-get install -y
   < Snapfile.classic xargs sudo snap install --classic
   ZSH_LOCATION=`which zsh`
+
+# MAC *************************************************************************
 else
   if [ "$(uname -m 2> /dev/null)" == "arm64" ]; then
     ZSH_LOCATION="/opt/homebrew/bin/zsh"
@@ -19,6 +20,13 @@ else
   # way to work in case one doesn't exist
   brew bundle
   brew bundle --file=~/.Brewfile
+
+  # Install command line tools if you haven't already
+  xcode-select --install
+  # Enable command line tools
+  sudo xcode-select --switch /Library/Developer/CommandLineTools
+  # Install fonts
+  open -b com.apple.FontBook ./misc/*.[ot]tf
 fi
 
 echo "Changing shell ..."
@@ -46,15 +54,46 @@ echo "⚠️  Now install all languages with 'asdf install'..."
 [ -f ~/.local/share/nvim/site/autoload/plug.vim ] || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Test if the neovim pip3 module is installed
-python3 -c "import neovim" >& /dev/null
+# Python stuff
 
-# If not, install it
-if [ "${?}" == "1" ]; then
-  # If this doesn't work, see:
-  # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
-  echo "Installing NeoVim pip3 module."
-  command -v pip3 && pip3 install neovim pynvim
+## Python 3
+if [ -x "$(command -v python3)" ]; then
+  # Test if the neovim pip3 module is installed
+  python3 -c "import neovim" >& /dev/null
+
+  # If not, install it
+  if [ "${?}" == "1" ]; then
+    # If this doesn't work, see:
+    # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
+    echo "Installing NeoVim pip3 module."
+    command -v pip3 && pip3 install neovim pynvim
+  fi
+
+## Python 2
+elif [ -x "$(command -v python2)" ]; then
+  # Test if the neovim pip2 module is installed
+  python2 -c "import neovim" >& /dev/null
+
+  # If not, install it
+  if [ "${?}" == "1" ]; then
+    # If this doesn't work, see:
+    # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
+    echo "Installing NeoVim pip2 module."
+    command -v pip2 && pip2 install neovim pynvim
+  fi
+
+## Vanilla Python
+elif [ -x "$(command -v python)" ]; then
+  # Test if the neovim pip2 module is installed
+  python -c "import neovim" >& /dev/null
+
+  # If not, install it
+  if [ "${?}" == "1" ]; then
+    # If this doesn't work, see:
+    # http://stackoverflow.com/questions/20082935/how-to-install-pip-for-python3-on-mac-os-x
+    echo "Installing NeoVim pip module."
+    command -v pip && pip install neovim pynvim
+  fi
 fi
 
 # install plug vim plugin if it's not there already
@@ -66,21 +105,11 @@ fi
 
 rcup -x setup -t ruby -t bash -t node -t ansible -t git -t nvim -t rspec -t tmux -t zsh
 
-if [ "$machine" != "Linux" ]; then
-  # Install command line tools if you haven't already
-  xcode-select --install
-  # Enable command line tools
-  sudo xcode-select --switch /Library/Developer/CommandLineTools
-  # Install fonts
-  open -b com.apple.FontBook ./misc/*.[ot]tf
-fi
-
 echo "Setup complete."
-
 echo ""
 echo "Run the following to get vim situated:"
 echo ""
 echo "$ nvim +'PlugInstall --sync' +qa"
 echo ""
-echo "And set iTerm's font to 'MesloLGS NF'"
+echo "And (if you're on a Mac) set iTerm's font to 'MesloLGS NF'"
 echo ""
