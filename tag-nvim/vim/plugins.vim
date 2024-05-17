@@ -5,9 +5,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Language-specific plugins
 
-" Golang
-" Plug 'fatih/vim-go'
-
 " Ansible
 Plug 'chase/vim-ansible-yaml'
 

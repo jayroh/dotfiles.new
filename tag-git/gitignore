@@ -8,6 +8,7 @@
 .solargraph.yml
 .stylelintrc.json
 .trello
+.nvimrc
 Release.key
 erd.pdf
 lefthook.yml
