@@ -3,10 +3,17 @@
 # LINUX ***********************************************************************
 if [ `uname -s` == "Linux" ]; then
   # install dependencies
-  < Aptfile xargs sudo apt-get install -y
-  < Snapfile.classic xargs sudo snap install --classic
-  ZSH_LOCATION=`which zsh`
+  while IFS= read -r package
+  do
+    # Run apt-get install against each package
+    sudo apt-get install -y "$package"
+  done < "Aptfile"
 
+  if [ -x "$(command -v snap)" ]; then
+    < Snapfile.classic xargs sudo snap install --classic
+  fi
+
+  ZSH_LOCATION=`which zsh`
 # MAC *************************************************************************
 else
   if [ "$(uname -m 2> /dev/null)" == "arm64" ]; then
