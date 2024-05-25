@@ -9,11 +9,12 @@ path=(
 	"/usr/sbin"
 	"/sbin"
 	"/snap/bin"
-	"$HOME/.npm-packages/bin"
 	"node_modules/.bin"
+	"$HOME/.cargo/bin"
+	"$HOME/.npm-packages/bin"
 	"$HOME/.bin"
-	"/usr/local/bin"
 	"$HOME/.local/bin"
+	"/usr/local/bin"
 	"$JAVA_HOME/jre/bin"
 )
 
