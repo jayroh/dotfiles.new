@@ -10,6 +10,7 @@ path=(
 	"/sbin"
 	"/snap/bin"
 	"node_modules/.bin"
+	"$HOME/go/bin"
 	"$HOME/.cargo/bin"
 	"$HOME/.npm-packages/bin"
 	"$HOME/.bin"
