@@ -1,10 +1,8 @@
 #!/bin/bash
 
+CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
 BRANCH=$1
 
-git push origin test:refs/heads/$BRANCH
-git fetch origin
-git branch --track $BRANCH origin/$BRANCH
-git checkout $BRANCH
-git push origin :refs/heads/test
-git branch -d test
+git branch -m $1
+git push origin $1
+git push origin --delete $CURRENT_BRANCH
