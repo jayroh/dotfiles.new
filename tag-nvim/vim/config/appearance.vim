@@ -10,16 +10,9 @@ set list listchars=tab:»·,trail:·,nbsp:·
 " Configure netrw style
 let g:netrw_liststyle=3
 
-" Configure lightline
-let g:lightline = {
-      \ 'component_function': {
-      \   'filename': 'LightLineFilename'
-      \ },
-      \ 'colorscheme': 'dracula',
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
-
-function! LightLineFilename()
-  return expand('%')
-endfunction
+" Configure lualine
+lua << END
+require('lualine').setup {
+  options = { theme = 'dracula' }
+}
+END

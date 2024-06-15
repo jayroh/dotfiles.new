@@ -48,19 +48,14 @@ Plug 'christoomey/vim-system-copy'
 " ... for my purposes this also provides a handy way to encode html entities
 Plug 'tpope/vim-unimpaired'
 
-" Easily comment/uncomment lines in many languages
-" Plug 'tomtom/tcomment_vim'
-Plug 'terrortylor/nvim-comment'
-
 " Git bindings
 Plug 'tpope/vim-fugitive'
 
 " Octo GitHub goodness
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'pwntester/octo.nvim'
 
 " Auto-add `end` in Ruby, `endfunction` in Vim, etc
-" Plug 'tpope/vim-endwise'
 Plug 'RRethy/nvim-treesitter-endwise'
 
 " Easily search for, substitute, and abbreviate multiple variants of a word.
@@ -79,7 +74,7 @@ Plug 'derekprior/vim-trimmer'
 Plug 'duggiefresh/vim-easydir'
 
 " Cool statusbar
-Plug 'itchyny/lightline.vim'
+Plug 'nvim-lualine/lualine.nvim'
 
 " Easily navigate directories
 Plug 'tpope/vim-vinegar'
@@ -133,7 +128,6 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 
 " Snippets
