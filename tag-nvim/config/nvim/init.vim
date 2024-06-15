@@ -83,8 +83,6 @@ lua << EOF
 
   require('wildfire').setup()
 
-  require('nvim_comment').setup()
-
   require('mason').setup {
       ui = {
           icons = {
