@@ -1,9 +1,9 @@
 ansible
 autojump
-awscli
 exuberant-ctags
 direnv
 docker-buildx
+docker-compose-v2
 fd-find
 ffmpeg
 fzf
