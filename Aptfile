@@ -27,6 +27,7 @@ memcached
 openjdk-11-jdk
 openssl
 pgcli
+postgresql-client
 python3-psycopg2
 python3-testresources
 python3-pip
