@@ -15,5 +15,6 @@ vim.g.copilot_filetypes = {
   typescript = true,
   yaml = true,
   vim = true,
+  sql = true,
 }
 EOF
