@@ -1,0 +1,26 @@
+require:
+ - rubocop-capybara
+ - rubocop-factory_bot
+ - rubocop-performance
+ - rubocop-rails
+ - rubocop-rspec
+ - rubocop-rspec_rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/*'
+    - 'config/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/**/*'
+    - 'bin/*'
+    - 'config/**/*'
