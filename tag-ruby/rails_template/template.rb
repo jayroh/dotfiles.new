@@ -49,6 +49,7 @@ def add_gems
   gem 'image_processing'
   gem 'nanoid', require: false
   gem 'vite_rails'
+  gem 'turbo-rails'
 
   gem_group :development, :test do
     gem 'rspec-rails'
@@ -63,6 +64,7 @@ def add_gems
 
   gem_group :development do
     gem 'overmind'
+    gem 'lefthook'
   end
 
   gem_group :test do
@@ -73,15 +75,16 @@ def add_gems
   remove_commented_lines 'Gemfile'
 end
 
-def add_rubocop_config
-  copy_file '.rubocop.yml'
-end
-
 def add_users
   route "root to: 'home#index'"
 end
 
-def copy_templates
+def copy_files
+  copy_file '.rubocop.yml'
+  copy_file 'Rakefile'
+  copy_file 'lefthook.yml'
+  copy_file 'bin/setup'
+
   directory 'app', force: true
   directory 'lib', force: true
   directory 'spec', force: true
@@ -111,6 +114,10 @@ def set_up_database
   remove_commented_lines 'config/database.yml'
 end
 
+def set_up_turbo
+  rails_command 'turbo:install'
+end
+
 # Main setup
 
 source_paths
@@ -119,15 +126,15 @@ add_tool_versions
 set_up_runtimes
 add_procfile
 add_gems
-add_rubocop_config
 
 after_bundle do
   add_npm_dependencies
   add_users
   add_friendly_id
   set_up_rspec
-  copy_templates
   set_up_database
+  set_up_turbo
+  copy_files
 
   # Migrate
   rails_command 'db:create'
@@ -142,6 +149,10 @@ after_bundle do
 
   # Initial rubocop setup
   run 'bundle binstubs rubocop'
+
+  # Install lefthook git hooks
+  run 'bundle binstubs lefthook'
+  run 'bin/lefthook install'
 
   say
   say 'Kickoff app successfully created! 👍'..., :green

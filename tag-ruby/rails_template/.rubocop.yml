@@ -9,8 +9,8 @@ require:
 AllCops:
   NewCops: enable
   Exclude:
-    - 'db/schema.rb'
-    - 'bin/*'
+    - 'db/**/*'
+    - 'bin/**/*'
     - 'config/**/*'
 
 Style/Documentation:
@@ -22,5 +22,11 @@ RSpec/MultipleExpectations:
 Metrics/MethodLength:
   Exclude:
     - 'db/**/*'
-    - 'bin/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'db/**/*'
+    - 'bin/**/*'
     - 'config/**/*'
