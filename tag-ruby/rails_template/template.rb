@@ -21,13 +21,6 @@ def remove_commented_lines(file)
   end
 end
 
-def add_tool_versions
-  create_file '.tool-versions', <<~TOOL_VERSIONS
-    ruby #{RUBY_VERSION}
-    nodejs #{NODE_VERSION}
-  TOOL_VERSIONS
-end
-
 def set_up_runtimes
   gsub_file 'Gemfile', /^ruby ".*"$/, "ruby file: '.tool-versions'"
   run 'asdf plugin update ruby'
@@ -35,7 +28,14 @@ def set_up_runtimes
   run 'asdf install'
 end
 
-def add_procfile
+def create_files
+  create_file '.env.sample'
+
+  create_file '.tool-versions', <<~TOOL_VERSIONS
+    ruby #{RUBY_VERSION}
+    nodejs #{NODE_VERSION}
+  TOOL_VERSIONS
+
   create_file 'Procfile', <<~PROCFILE
     vite: bin/vite dev
     web: bin/rails s -b 0.0.0.0
@@ -52,6 +52,7 @@ def add_gems
   gem 'turbo-rails'
 
   gem_group :development, :test do
+    gem 'dotenv'
     gem 'rspec-rails'
     gem 'rubocop', require: false
     gem 'rubocop-capybara', require: false
@@ -122,9 +123,8 @@ end
 
 source_paths
 
-add_tool_versions
+create_files
 set_up_runtimes
-add_procfile
 add_gems
 
 after_bundle do
