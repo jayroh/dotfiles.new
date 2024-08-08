@@ -64,6 +64,7 @@ def add_gems
   end
 
   gem_group :development do
+    gem 'i18n-tasks'
     gem 'overmind'
     gem 'lefthook'
   end
@@ -89,6 +90,17 @@ def copy_files
   directory 'app', force: true
   directory 'lib', force: true
   directory 'spec', force: true
+  directory 'config', force: true
+end
+
+def install_binstubs
+  binstubs = %w[
+    rubocop
+    lefthook
+    overmind
+    rspec-core
+  ]
+  run "bundle binstubs #{binstubs.join(' ')}"
 end
 
 def add_friendly_id
@@ -135,6 +147,7 @@ after_bundle do
   set_up_database
   set_up_turbo
   copy_files
+  install_binstubs
 
   # Migrate
   rails_command 'db:create'
@@ -147,11 +160,7 @@ after_bundle do
   git commit: %( -m "Initial commit" )
   run 'mkdir -p .git/safe'
 
-  # Initial rubocop setup
-  run 'bundle binstubs rubocop'
-
   # Install lefthook git hooks
-  run 'bundle binstubs lefthook'
   run 'bin/lefthook install'
 
   say
