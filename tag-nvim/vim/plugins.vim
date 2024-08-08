@@ -89,8 +89,9 @@ Plug 'sustech-data/wildfire.nvim'
 " Make `.` work to repeat plugin actions too
 Plug 'tpope/vim-repeat'
 
-" Intelligently reopen files where you left off
-" Plug 'dietsche/vim-lastplace'
+" File explorer / file drawer
+Plug 'MunifTanjim/nui.nvim'        " a dependency of ...
+Plug 'nvim-neo-tree/neo-tree.nvim' " ...this
 
 " For quick motion and moving around your buffer(s)
 Plug 'ggandor/leap.nvim'
@@ -99,7 +100,7 @@ Plug 'ggandor/leap.nvim'
 Plug 'troydm/easybuffer.vim'
 
 " Neomake fullfills the same job Syntastic had previously, except it's async
-Plug 'benekastah/neomake' " run yarn install
+Plug 'benekastah/neomake'
 
 " Autoformat code!
 Plug 'sbdchd/neoformat'
