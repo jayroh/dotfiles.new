@@ -9,3 +9,6 @@ nnoremap <leader>nh :nohlsearch<cr>
 
 " Run ctags
 nnoremap <leader>ct :!ctags -R .
+
+" Open Neotree
+nnoremap <leader>nt :Neotree toggle<cr>
