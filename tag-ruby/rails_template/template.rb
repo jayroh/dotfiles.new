@@ -42,13 +42,14 @@ def create_files
 end
 
 def add_gems
-  gem 'friendly_id'
   gem 'faker', require: false
+  gem 'friendly_id'
   gem 'good_job'
   gem 'image_processing'
   gem 'nanoid', require: false
-  gem 'vite_rails'
+  gem 'redis'
   gem 'turbo-rails'
+  gem 'vite_rails'
 
   gem_group :development, :test do
     gem 'dotenv'
@@ -189,6 +190,14 @@ after_bundle do
   rails_command 'db:create'
   rails_command 'db:migrate'
 
+  # Install lefthook git hooks
+  say '⚡Installing lefthook git hooks...', :yellow
+  run 'bin/lefthook install'
+
+  # Rubocop all the things
+  say '⚡Running rubocop ...', :yellow
+  rails_command 'rubocop', abort_on_failure: false
+
   # Git
   say '⚡Initializing git...', :yellow
   copy_file '.gitignore', force: true
@@ -197,15 +206,6 @@ after_bundle do
   git commit: %( -m "Initial commit" )
   run 'mkdir -p .git/safe'
 
-  # Install lefthook git hooks
-  say '⚡Installing lefthook git hooks...', :yellow
-  run 'bin/lefthook install'
-
   say
   say 'Kickoff app successfully created! 👍'..., :green
-  say
-
-  say '...AND running rubocop auto-correct', :yellow
-  say
-  run 'bin/rubocop --autocorrect-all --out tmp/rubocop-auto-correct.log'
 end
