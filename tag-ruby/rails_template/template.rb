@@ -29,8 +29,6 @@ def set_up_runtimes
 end
 
 def create_files
-  create_file '.env.sample'
-
   create_file '.tool-versions', <<~TOOL_VERSIONS
     ruby #{RUBY_VERSION}
     nodejs #{NODE_VERSION}
@@ -46,6 +44,7 @@ end
 def add_gems
   gem 'friendly_id'
   gem 'faker', require: false
+  gem 'good_job'
   gem 'image_processing'
   gem 'nanoid', require: false
   gem 'vite_rails'
@@ -77,15 +76,14 @@ def add_gems
   remove_commented_lines 'Gemfile'
 end
 
-def add_users
-  route "root to: 'home#index'"
-end
-
 def copy_files
-  copy_file '.rubocop.yml'
-  copy_file 'Rakefile'
-  copy_file 'lefthook.yml'
-  copy_file 'bin/setup'
+  copy_file 'Procfile.dev', force: true
+  copy_file 'Procfile.production', force: true
+  copy_file '.rubocop.yml', force: true
+  copy_file 'Rakefile', force: true
+  copy_file 'lefthook.yml', force: true
+  copy_file 'bin/setup', force: true
+  copy_file '.env.sample', force: true
 
   directory 'app', force: true
   directory 'lib', force: true
@@ -95,20 +93,19 @@ end
 
 def install_binstubs
   binstubs = %w[
-    rubocop
+    good_job
     lefthook
     overmind
     rspec-core
+    rubocop
   ]
   run "bundle binstubs #{binstubs.join(' ')}"
 end
 
-def add_friendly_id
+def run_generators
   generate 'friendly_id'
-end
-
-def set_up_rspec
   generate 'rspec:install'
+  generate 'good_job:install'
 end
 
 def add_npm_dependencies
@@ -131,29 +128,69 @@ def set_up_turbo
   rails_command 'turbo:install'
 end
 
+def update_app_config
+  insert_into_file 'config/application.rb', after: /.*config.load_defaults.*$/ do
+    <<~APP_CONFIG
+      \n
+      config.generators do |g|
+        g.factory_bot dir: 'spec/factories'
+        g.helper false
+        g.orm :active_record, primary_key_type: :uuid
+        g.request_specs false
+        g.routing_specs false
+        g.test_framework :rspec
+        g.view_specs false
+      end
+
+      config.active_job.queue_adapter = :good_job
+    APP_CONFIG
+  end
+end
+
+def update_routes
+  route "root to: 'home#index'"
+  route "mount GoodJob::Engine => 'good_job'"
+end
+
 # Main setup
 
 source_paths
-
 create_files
 set_up_runtimes
 add_gems
 
 after_bundle do
+  say '⚡Adding npm dependencies ...', :yellow
   add_npm_dependencies
-  add_users
-  add_friendly_id
-  set_up_rspec
+
+  say '⚡Running generators ...', :yellow
+  run_generators
+
+  say '⚡Setting up database ...', :yellow
   set_up_database
+
+  say '⚡Setting up turbo ...', :yellow
   set_up_turbo
+
+  say '⚡Copying over files ...', :yellow
   copy_files
+
+  say '⚡Installing binstubs ...', :yellow
   install_binstubs
 
+  say '⚡Updating app config file ...', :yellow
+  update_app_config
+
+  say '⚡Updating routes ...', :yellow
+  update_routes
+
   # Migrate
+  say '⚡Migrating database...', :yellow
   rails_command 'db:create'
   rails_command 'db:migrate'
 
   # Git
+  say '⚡Initializing git...', :yellow
   copy_file '.gitignore', force: true
   git :init
   git add: '.'
@@ -161,6 +198,7 @@ after_bundle do
   run 'mkdir -p .git/safe'
 
   # Install lefthook git hooks
+  say '⚡Installing lefthook git hooks...', :yellow
   run 'bin/lefthook install'
 
   say

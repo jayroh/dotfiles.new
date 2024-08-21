@@ -11,7 +11,14 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'bin/**/*'
-    - 'config/**/*'
+
+Layout/LineLength:
+  Exclude:
+    - 'config/initializers/**/*'
+
+Style/EmptyMethod:
+  Exclude:
+    - 'spec/support/feature/**/*'
 
 Style/Documentation:
   Enabled: false
@@ -19,14 +26,5 @@ Style/Documentation:
 RSpec/MultipleExpectations:
   Enabled: false
 
-Metrics/MethodLength:
-  Exclude:
-    - 'db/**/*'
-    - 'bin/**/*'
-    - 'config/**/*'
-
-Metrics/BlockLength:
-  Exclude:
-    - 'db/**/*'
-    - 'bin/**/*'
-    - 'config/**/*'
+RSpec/ExampleLength:
+  Max: 20
