@@ -72,6 +72,7 @@ def add_gems
   gem_group :test do
     gem 'cuprite'
     gem 'factory_bot_rails'
+    gem 'generator_spec'
   end
 
   remove_commented_lines 'Gemfile'
