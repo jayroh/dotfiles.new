@@ -88,9 +88,19 @@ def copy_files
   copy_file '.env.sample', force: true
 
   directory 'app', force: true
-  directory 'lib', force: true
-  directory 'spec', force: true
   directory 'config', force: true
+  directory 'spec', force: true
+
+  ignore_tt do
+    directory 'lib', force: true
+  end
+end
+
+def ignore_tt
+  Thor::TEMPLATE_EXTNAME.concat '_no_match' # => .tt_no_match
+  yield
+ensure
+  Thor::TEMPLATE_EXTNAME.chomp! '_no_match' # => .tt
 end
 
 def install_binstubs
