@@ -34,6 +34,7 @@ Plug 'reedes/vim-pencil'
 " ---------------------------------
 " github co-pilot
 Plug 'github/copilot.vim'
+Plug 'Yggdroot/indentLine'
 
 " ag for vim
 Plug 'rking/ag.vim'

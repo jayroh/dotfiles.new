@@ -16,3 +16,6 @@ require('lualine').setup {
   options = { theme = 'dracula' }
 }
 END
+
+" Use a different indent line character
+let g:indentLine_char = '⦙'
