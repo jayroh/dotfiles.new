@@ -21,6 +21,7 @@ if has('autocmd')
     au BufRead,BufNewFile Gemfile set ft=ruby
     au BufRead,BufNewFile Gemfile set ft=ruby
     au BufRead,BufNewFile Thorfile set ft=ruby
+    au BufRead,BufNewFile compose.yaml,compose.yml,docker-compose.yaml,docker-compose.yml set ft=yaml.docker-compose
 
     au FileType gitcommit setlocal spell
     au FileType html,ruby,eruby,yaml,vim,javascript,json,liquid,typescript,crystal,css setlocal autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab

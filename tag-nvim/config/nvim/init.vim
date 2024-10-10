@@ -102,7 +102,21 @@ lua << EOF
      'solargraph' ,
      'tailwindcss',
      'tsserver',
+     'dockerls',
+     'docker_compose_language_service',
     },
+  }
+
+  require('mason-tool-installer').setup {
+    ensure_installed = {
+      'eslint',
+      'htmlhint',
+      'jsonlint',
+      'rubocop',
+      'hadolint',
+    },
+    auto_update = true,
+    run_on_start = true,
   }
 
   -- Use an on_attach function to only map the following keys
@@ -144,6 +158,12 @@ lua << EOF
 
   local lspconfig = require("lspconfig")
 
+  lspconfig.docker_compose_language_service.setup {
+    on_attach = on_attach,
+  }
+  lspconfig.dockerls.setup {
+    on_attach = on_attach,
+  }
   lspconfig.eslint.setup {
     on_attach = on_attach,
   }
