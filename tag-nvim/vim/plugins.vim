@@ -34,7 +34,9 @@ Plug 'reedes/vim-pencil'
 " ---------------------------------
 " github co-pilot
 Plug 'github/copilot.vim'
-Plug 'Yggdroot/indentLine'
+
+" Indented line guides
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " ag for vim
 Plug 'rking/ag.vim'
@@ -121,7 +123,7 @@ Plug 'karb94/neoscroll.nvim'
 " Highlight all instances of word cursor is on, in current buffer
 Plug 'RRethy/vim-illuminate'
 
-" LSP and completion
+" LSP and completion and linting
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'WhoIsSethDaniel/mason-tool-installer.nvim'
@@ -132,6 +134,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'folke/trouble.nvim'
+Plug 'mfussenegger/nvim-lint'
 
 " Snippets
 Plug 'hrsh7th/cmp-vsnip'

@@ -79,16 +79,18 @@ let g:loaded_perl_provider = 0
 set nofoldenable
 
 lua << EOF
+  require('ibl').setup()
+
   require('neoscroll').setup()
 
   require('wildfire').setup()
 
   require('mason').setup {
-      ui = {
-          icons = {
-              package_installed = '✓'
-          }
+    ui = {
+      icons = {
+        package_installed = '✓'
       }
+    }
   }
 
   require('mason-lspconfig').setup {
@@ -114,9 +116,20 @@ lua << EOF
       'jsonlint',
       'rubocop',
       'hadolint',
+      'markdownlint',
     },
     auto_update = true,
     run_on_start = true,
+  }
+
+  require('lint').linters_by_ft = {
+    javascript = { 'eslint' },
+    typescript = { 'eslint' },
+    json = { 'jsonlint' },
+    html = { 'htmlhint' },
+    ruby = { 'rubocop' },
+    dockerfile = { 'hadolint' },
+    markdown = { 'markdownlint' },
   }
 
   -- Use an on_attach function to only map the following keys
@@ -188,8 +201,7 @@ lua << EOF
     on_attach = on_attach,
     filetypes = { "html", "css", "eruby" },
   }
-
-  require'lspconfig'.tsserver.setup{
+  lspconfig.tsserver.setup{
     on_attach = on_attach,
     filetypes = { "typescript" },
   }

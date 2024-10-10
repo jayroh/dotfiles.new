@@ -3,7 +3,7 @@ if has('autocmd')
 
   augroup autoindent
     au!
-    autocmd BufWritePre *.css :normal migg=G`i
+    autocmd BufWritePre *.css,*.json :normal migg=G`i
   augroup End
 
   augroup myfiletypes
@@ -23,10 +23,12 @@ if has('autocmd')
     au BufRead,BufNewFile Thorfile set ft=ruby
     au BufRead,BufNewFile compose.yaml,compose.yml,docker-compose.yaml,docker-compose.yml set ft=yaml.docker-compose
 
+    au Filetype json let g:indentLine_enabled = 0
     au FileType gitcommit setlocal spell
     au FileType html,ruby,eruby,yaml,vim,javascript,json,liquid,typescript,crystal,css setlocal autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
     au FileType html.eruby setlocal autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
     au BufWritePre *.rb,*.rake,*.js,*.ts lua vim.lsp.buf.format(nil, 2000)
+    au BufWritePost * lua require('lint').try_lint()
 
     " Markdown-like buffers
     au BufRead,BufNewFile *.md,*.markdown,gitcommit set ft=markdown
