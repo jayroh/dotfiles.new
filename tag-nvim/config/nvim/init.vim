@@ -103,7 +103,7 @@ lua << EOF
      'rubocop',
      'solargraph' ,
      'tailwindcss',
-     'tsserver',
+     'ts_ls',
      'dockerls',
      'docker_compose_language_service',
     },
@@ -201,7 +201,7 @@ lua << EOF
     on_attach = on_attach,
     filetypes = { "html", "css", "eruby" },
   }
-  lspconfig.tsserver.setup{
+  lspconfig.ts_ls.setup{
     on_attach = on_attach,
     filetypes = { "typescript" },
   }
