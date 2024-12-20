@@ -43,11 +43,12 @@ chsh -s $ZSH_LOCATION
 tic -x ~/.dotfiles/misc/tmux.terminfo
 tic -x ~/.dotfiles/misc/xterm-256color-italic.terminfo
 
-# Install powerlevel10k
-[ -d ~/.powerlevel10k ] || git clone https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+# Install pure
+[ -d "$HOME/.zsh" ] || mkdir -p "$HOME/.zsh"
+[ -d "$HOME/.zsh/pure" ] || git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
 # Install asdf
-[ -d ~/.asdf ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+[ -d "$HOME/.asdf" ] || git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 [ $SHELL == "/bin/bash" ] && source ~/.bashrc
 [ $SHELL == "$ZSH_LOCATION" ] && source ~/.zshrc
 
